@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avernus_Games_v2", "Avernus_Games_v2.csproj", "{2E6C9D10-8B48-46F8-AE48-3DD947FED654}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E6C9D10-8B48-46F8-AE48-3DD947FED654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E6C9D10-8B48-46F8-AE48-3DD947FED654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E6C9D10-8B48-46F8-AE48-3DD947FED654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E6C9D10-8B48-46F8-AE48-3DD947FED654}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A577547-3616-4FC8-92F5-00FF48BC1BF4}
+	EndGlobalSection
+EndGlobal
