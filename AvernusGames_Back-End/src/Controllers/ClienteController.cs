@@ -18,7 +18,7 @@ public class ClienteController : ControllerBase
 
     //LISTAR
     [HttpGet]
-    [Route("Listar - Cliente")]
+    [Route("listar_clientes")]
     public async Task<ActionResult<IEnumerable<Cliente>>> Listar()
     {
         if(_context.Cliente is null)
@@ -28,7 +28,7 @@ public class ClienteController : ControllerBase
 
     //CADASTRAR
     [HttpPost]
-    [Route("CadastrarCliente")]
+    [Route("cadastrar_cliente")]
     public IActionResult Cadastrar(Cliente cliente)
     {
         if (!GeneralHelper.ValidarCPF(cliente.CPF)){
@@ -42,8 +42,8 @@ public class ClienteController : ControllerBase
 
     //BUSCAR POR CPF
     [HttpGet]
-    [Route("BuscarPorCPFdoCliente")]
-    public async Task<ActionResult<Cliente>> BuscarCpfCliente (string cpf)
+    [Route("buscar_cpf_do_cliente")]
+    public async Task<ActionResult<Cliente>> BuscarCpf(string cpf)
     {
         if(_context.Cliente is null)
             return  NotFound();
@@ -71,8 +71,8 @@ public class ClienteController : ControllerBase
 
     //Buscar por nome teoricamente sem ser precisamente exato
     [HttpGet]
-    [Route("BuscarPorNome - Cliente")]
-    public async Task<ActionResult<List<Cliente>>> BuscarClientePorNome(string nome)
+    [Route("buscar_nome_cliente")]
+    public async Task<ActionResult<List<Cliente>>> BuscarNome(string nome)
     {
     if (_context.Cliente is null)
         return NotFound();
@@ -85,8 +85,8 @@ public class ClienteController : ControllerBase
 
     //Buscar Cliente por E-Mail
     [HttpGet]
-    [Route("BuscarPorEmail - Cliente")]
-    public async Task<ActionResult<Cliente>> BuscarClientePorEmail(string email)
+    [Route("buscar_email_cliente")]
+    public async Task<ActionResult<Cliente>> BuscarEmail(string email)
     {
     if (_context.Cliente is null)
         return NotFound();
@@ -96,11 +96,10 @@ public class ClienteController : ControllerBase
     return cliente;
     }
 
-
     //Excluir Cliente ID
     [HttpDelete]
-    [Route("ExcluirClientePorID - Cliente")]
-    public async Task<ActionResult> ExcluirClientePorID(int id)
+    [Route("excluir_id")]
+    public async Task<ActionResult> ExcluirID(int id)
     {
         var clienteExistente = await _context.Cliente.FirstOrDefaultAsync(c => c.ClienteId == id);
         if (clienteExistente == null)
@@ -112,8 +111,8 @@ public class ClienteController : ControllerBase
 
     //Excluir Cliente CPF
     [HttpDelete]
-    [Route("ExcluirClientePorCPF - Cliente")]
-    public async Task<ActionResult> ExcluirClientePorCPF(string cpf)
+    [Route("excluir_cpf")]
+    public async Task<ActionResult> ExcluirCPF(string cpf)
     {
         var clienteExistente = await _context.Cliente.FirstOrDefaultAsync(c => c.CPF == cpf);
         if (clienteExistente == null)
@@ -135,7 +134,7 @@ public class ClienteController : ControllerBase
     } */
 
     [HttpPatch()]
-    [Route("AlterarSenha/{id}")]
+    [Route("altear_senha")]
     public async Task<ActionResult> AlterarSenha(int id, [FromForm] string senha)
     {
         if(_context is null) return NotFound();

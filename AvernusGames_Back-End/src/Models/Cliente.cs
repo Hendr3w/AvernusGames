@@ -16,7 +16,6 @@ namespace Avernus_Games_Store.src.Models
         public string? Telefone { get; set; }
         
         public Endereco? Endereco { get; set; }
-        public int Endereco_id { get; set; }
         //public List<Venda>? Vendas {get; set;}
 
         public Cliente(){}
