@@ -18,6 +18,8 @@ namespace Avernus_Games_Store.src.Models
         public Endereco? Endereco { get; set; }
         //public List<Venda>? Vendas {get; set;}
 
+        //Ola 
+
         public Cliente(){}
 
         public Cliente(string nome, string cpf, string email, string senha, string phone, Endereco endereco)
