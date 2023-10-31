@@ -19,7 +19,7 @@ namespace Avernus_Games_Store.src.Models
         //public List<Venda>? Vendas {get; set;}
 
         //Ola 
-
+        //Busco Sexo
         public Cliente(){}
 
         public Cliente(string nome, string cpf, string email, string senha, string phone, Endereco endereco)
