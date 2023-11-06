@@ -8,22 +8,14 @@ namespace Avernus_Games_Store.src.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int FornecedorId { get; set; }
+        public int Id { get; set; }
         public string? CNPJ { get; set; }
         public string? Nome { get; set; }
         public string? Email { get; set; }
         public string? Telefone { get; set; }
         public Endereco? Endereco { get; set; }
+        public int EnderecoId { get; set; }
 
         public Fornecedor(){}
-
-        public Fornecedor(string cnpj, string nome, string email, string telefone, Endereco endereco)
-        {
-            CNPJ = cnpj;
-            Nome = nome;
-            Email = email;
-            Telefone = telefone;
-            Endereco = endereco;
-        }
     }
 }

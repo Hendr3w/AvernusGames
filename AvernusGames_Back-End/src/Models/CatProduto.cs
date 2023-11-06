@@ -8,15 +8,9 @@ using System.ComponentModel.DataAnnotations.Schema;
     public class CatProduto
     {
         [Key]
-        public int CatID { get; set; }
+        public int Id { get; set; }
         public string? Categoria { get; set; }
         public string? Desc { get; set; }
         public CatProduto(){}
-        public CatProduto(string categoria, string descricao)
-        {
-            Categoria = categoria;
-            Desc = descricao;
-        }
     }
-    
 }

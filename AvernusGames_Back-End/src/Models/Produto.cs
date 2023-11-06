@@ -15,25 +15,11 @@ namespace Avernus_Games_Store.src.Models
         public float Markup { get; set; }
         public string? Descricao { get; set; }
         public CatProduto? Categoria { get; set; }
+        public int CategoriaId { get; set; }
         public Fornecedor? Fornecedor { get; set; }
+        public int FornecedorId { get; set; }
 
-        [JsonConstructor]
         public Produto(){}
-
-        public Produto(string nome, string codProduto, float valorCompra, float markup, string descricao)
-        {
-            Nome = nome;
-            ValorCompra = valorCompra;
-            Markup = markup;
-            Descricao = descricao;
-            Categoria = new CatProduto(string.Empty, string.Empty);
-
-        }
-
         public abstract float CalcValorVenda(float ValorCompra, float Markup);
-
-
-        
-
     }
 }

@@ -13,11 +13,5 @@ using System.ComponentModel.DataAnnotations.Schema;
         public string? Desc { get; set; }
 
         public Sistema(){} // Construtor vazio
-
-        public Sistema(string nome, string desc)
-        {
-            Nome = nome;
-            Desc = desc;
-        } // Construtor com todos os atributos
     }
 }

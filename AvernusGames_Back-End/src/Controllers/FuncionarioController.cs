@@ -47,7 +47,7 @@ public class FuncionarioController : ControllerBase
     {
     if (_context.Funcionario is null)
         return NotFound();
-    var funcionario = await _context.Funcionario.FirstOrDefaultAsync(c => c.FuncionarioId == Id);
+    var funcionario = await _context.Funcionario.FirstOrDefaultAsync(c => c.Id == Id);
     if (funcionario is null)
         return NotFound();
     return funcionario;
@@ -79,7 +79,7 @@ public class FuncionarioController : ControllerBase
     [Route("ExcluirFuncionario/{id}")]
     public async Task<ActionResult> ExcluirFuncionario([FromRoute] int id)
     {
-        var funcionario = await _context.Funcionario.FirstOrDefaultAsync(c => c.FuncionarioId == id);
+        var funcionario = await _context.Funcionario.FirstOrDefaultAsync(c => c.Id == id);
         if (funcionario == null)
         return NotFound();
         _context.Funcionario.Remove(funcionario);

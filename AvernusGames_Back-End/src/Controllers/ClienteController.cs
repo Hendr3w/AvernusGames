@@ -101,7 +101,7 @@ public class ClienteController : ControllerBase
     [Route("excluir_id")]
     public async Task<ActionResult> ExcluirID(int id)
     {
-        var clienteExistente = await _context.Cliente.FirstOrDefaultAsync(c => c.ClienteId == id);
+        var clienteExistente = await _context.Cliente.FirstOrDefaultAsync(c => c.Id == id);
         if (clienteExistente == null)
             return NotFound();
         _context.Cliente.Remove(clienteExistente);

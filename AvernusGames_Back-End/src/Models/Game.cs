@@ -8,19 +8,13 @@ namespace Avernus_Games_Store.src.Models
     public class Game : Produto
     {
         public Genero? Genero { get; set; }
+        public int GeneroId { get; set; }
         public DateTime? ReleaseDate { get; set; }
         public Desenvolvedor? Desenvolvedor { get; set; }
+        public int DesenvolvedorId { get; set; }
         public Plataforma? Plataforma { get; set; }
+        public int PlataformaId { get; set; }
         public Game(){} // Construtor vazio
-        public Game(string nome, string codProduto, float valorCompra, float markup, string descricao, Genero genero, DateTime releaseDate, Desenvolvedor desenvolvedor, Plataforma plataforma)
-            : base(nome, codProduto, valorCompra, markup, descricao)
-        {
-            Genero = genero;
-            ReleaseDate = releaseDate;
-            Desenvolvedor = desenvolvedor;
-            Plataforma = plataforma;
-        } // Construtor com todos os atributos
-
         public override float CalcValorVenda(float ValorCompra, float Markup)
         {
             float ValorVenda = ValorCompra * (1 + Markup);

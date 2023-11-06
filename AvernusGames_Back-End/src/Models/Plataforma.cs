@@ -8,14 +8,9 @@ using System.ComponentModel.DataAnnotations.Schema;
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PlataformaID { get; set; }
+        public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Desc { get; set; }
         public Plataforma(){} // Construtor vazio
-        public Plataforma(string nome, string descricao)
-        {
-            Nome = nome;
-            Desc = descricao;
-        } // Construtor com todos os atributos
     }
 }

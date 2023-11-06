@@ -88,7 +88,7 @@ public class FornecedorController : ControllerBase
     [Route("ExcluirFornecedorPorID - Fornecedor")]
     public async Task<ActionResult> ExcluirFornecedorPorID(int id)
     {
-        var fornecedorExistente = await _context.Fornecedor.FirstOrDefaultAsync(f => f.FornecedorId == id);
+        var fornecedorExistente = await _context.Fornecedor.FirstOrDefaultAsync(f => f.Id == id);
         if (fornecedorExistente == null)
             return NotFound();
         _context.Fornecedor.Remove(fornecedorExistente);

@@ -8,17 +8,10 @@ using System.ComponentModel.DataAnnotations.Schema;
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int TamanhoId { get; set; }
+        public int Id { get; set; }
         public int Cod { get; set; }
         public string? Tag { get; set; }
-
         public Tamanho(){} // Construtor vazio
-
-        public Tamanho(int cod, string tag)
-        {
-            Cod = cod;
-            Tag = tag;
-        } // Construtor com todos os atributos
     }
 
 }

@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aluno\\Documents\\Github\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {}
+    "E:\\WorkSpace_C#\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aluno\\Documents\\Github\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {
+    "E:\\WorkSpace_C#\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aluno\\Documents\\Github\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
+        "projectUniqueName": "E:\\WorkSpace_C#\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
         "projectName": "Avernus_Games_v2",
-        "projectPath": "C:\\Users\\Aluno\\Documents\\Github\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
-        "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aluno\\Documents\\Github\\AvernusGames\\AvernusGames_Back-End\\obj\\",
+        "projectPath": "E:\\WorkSpace_C#\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
+        "packagesPath": "C:\\Users\\hendr\\.nuget\\packages\\",
+        "outputPath": "E:\\WorkSpace_C#\\AvernusGames\\AvernusGames_Back-End\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hendr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,7 +44,7 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.11, )"
+              "version": "[7.0.13, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

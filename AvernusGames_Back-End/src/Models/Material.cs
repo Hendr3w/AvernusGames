@@ -11,13 +11,6 @@ using System.ComponentModel.DataAnnotations.Schema;
         public int Id { get; set; }
         public int Cod { get; set; }
         public string? Desc { get; set; }
-
-        public Material(){} // Construtor vazio
-
-        public Material(int cod, string desc)
-        {
-            Cod = cod;
-            Desc = desc;
-        } // Construtor com todos os atributos
+        public Material(){}
     }
 }

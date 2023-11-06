@@ -12,10 +12,5 @@ using System.ComponentModel.DataAnnotations.Schema;
             public string? Nome { get; set; }
             public string? Desc { get; set; }
             public Genero(){} // Construtor vazio
-            public Genero(string nome, string descricao)
-            {
-                Nome = nome;
-             Desc = descricao;
-            } // Construtor com todos os atributos
         }
 }

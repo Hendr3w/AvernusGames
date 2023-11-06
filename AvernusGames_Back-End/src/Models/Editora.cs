@@ -12,15 +12,6 @@ using System.ComponentModel.DataAnnotations.Schema;
         public string? Nome { get; set; }
         public string? Email { get; set; }
         public string? Telefone { get; set; }
-
         public Editora(){} // Construtor vazio
-
-        public Editora(string nome, string email, string telefone)
-        {
-            
-            Nome = nome;
-            Email = email;
-            Telefone = telefone;
-        } // Construtor com todos os atributos
     }
 }

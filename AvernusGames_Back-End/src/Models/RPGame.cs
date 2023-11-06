@@ -7,27 +7,11 @@ namespace Avernus_Games_Store.src.Models
     public class RPGame : Produto
     {
         public Editora? Editora { get; set; }
+        public int EditoraId { get; set; }
         public DateTime? ReleaseDate { get; set; }
         public Sistema? Sistema { get; set; }
-
+        public int SistemaId { get; set; }
         public RPGame(){} // Construtor vazio
-
-        public RPGame(
-            string nome, 
-            string codProduto, 
-            float valorCompra, 
-            float markup, 
-            string descricao, 
-            Editora? editora, 
-            DateTime? releaseDate, 
-            Sistema? sistema)
-            : base(nome, codProduto, valorCompra, markup, descricao)
-        {
-            Editora = editora;
-            ReleaseDate = releaseDate;
-            Sistema = sistema;
-        } // Construtor com todos os atributos
-
         public override float CalcValorVenda(float ValorCompra, float Markup)
         {
             float ValorVenda = ValorCompra * (1 + Markup);

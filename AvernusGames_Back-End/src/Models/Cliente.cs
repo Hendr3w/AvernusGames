@@ -8,31 +8,14 @@ namespace Avernus_Games_Store.src.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ClienteId { get; set; }
+        public int Id { get; set; }
         public string? Nome { get; set; }
         public string? CPF { get; set; }
         public string? Email { get; set; }
         public string? Senha { get; set; }
         public string? Telefone { get; set; }
-        
         public Endereco? Endereco { get; set; }
-        //public List<Venda>? Vendas {get; set;}
-
-        //Ola 
-        //Busco Sexo
+        public int EnderecoId { get; set; }
         public Cliente(){}
-
-        public Cliente(string nome, string cpf, string email, string senha, string phone, Endereco endereco)
-        {
-            Nome = nome;
-            CPF = cpf;
-            Email = email;
-            Senha = senha;
-            Telefone = phone;
-            Endereco = endereco;
-        }
-
-
-
     }
 }
