@@ -85,14 +85,14 @@ namespace Avernus_Games_Store.src
 
         }
 
-        public static float CalcTotalVenda(Venda venda){
+        /*public static float CalcTotalVenda(Venda venda){
             List<ItemVenda> itens = venda.Itens;
             float som = 0;
             foreach(ItemVenda x in itens){
                 som = som + (x.Produto.CalcValorVenda(x.Produto.ValorCompra, x.Produto.Markup) * x.Qtd);
             }
             return som;
-        }
+        }*/
 
     }
 }

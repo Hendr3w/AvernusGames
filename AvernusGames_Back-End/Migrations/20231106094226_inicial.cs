@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Avernus_Games_v2.Migrations
 {
     /// <inheritdoc />
-    public partial class v1 : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,7 @@ namespace Avernus_Games_v2.Migrations
                 name: "CatProduto",
                 columns: table => new
                 {
-                    CatID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Categoria = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -28,7 +28,23 @@ namespace Avernus_Games_v2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CatProduto", x => x.CatID);
+                    table.PrimaryKey("PK_CatProduto", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Cor",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Cod = table.Column<int>(type: "int", nullable: false),
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cor", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -40,7 +56,7 @@ namespace Avernus_Games_v2.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Estudio = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    NomeDesenvolvedor = table.Column<string>(type: "longtext", nullable: true)
+                    NomeDev = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -72,7 +88,7 @@ namespace Avernus_Games_v2.Migrations
                 name: "Endereco",
                 columns: table => new
                 {
-                    EnderecoId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Pais = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -87,7 +103,7 @@ namespace Avernus_Games_v2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Endereco", x => x.EnderecoId);
+                    table.PrimaryKey("PK_Endereco", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -109,10 +125,26 @@ namespace Avernus_Games_v2.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Material",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Cod = table.Column<int>(type: "int", nullable: false),
+                    Desc = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Material", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Plataforma",
                 columns: table => new
                 {
-                    PlataformaID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -121,7 +153,7 @@ namespace Avernus_Games_v2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Plataforma", x => x.PlataformaID);
+                    table.PrimaryKey("PK_Plataforma", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -143,10 +175,26 @@ namespace Avernus_Games_v2.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "Tamanho",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Cod = table.Column<int>(type: "int", nullable: false),
+                    Tag = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tamanho", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Cliente",
                 columns: table => new
                 {
-                    ClienteId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -158,17 +206,17 @@ namespace Avernus_Games_v2.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Telefone = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    EnderecoId = table.Column<int>(type: "int", nullable: true),
-                    Endereco_id = table.Column<int>(type: "int", nullable: false)
+                    EnderecoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cliente", x => x.ClienteId);
+                    table.PrimaryKey("PK_Cliente", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Cliente_Endereco_EnderecoId",
                         column: x => x.EnderecoId,
                         principalTable: "Endereco",
-                        principalColumn: "EnderecoId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -176,7 +224,7 @@ namespace Avernus_Games_v2.Migrations
                 name: "Fornecedor",
                 columns: table => new
                 {
-                    FornecedorId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CNPJ = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -186,16 +234,17 @@ namespace Avernus_Games_v2.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Telefone = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    EnderecoId = table.Column<int>(type: "int", nullable: true)
+                    EnderecoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Fornecedor", x => x.FornecedorId);
+                    table.PrimaryKey("PK_Fornecedor", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Fornecedor_Endereco_EnderecoId",
                         column: x => x.EnderecoId,
                         principalTable: "Endereco",
-                        principalColumn: "EnderecoId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -203,7 +252,7 @@ namespace Avernus_Games_v2.Migrations
                 name: "Funcionario",
                 columns: table => new
                 {
-                    FuncionarioId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -215,18 +264,19 @@ namespace Avernus_Games_v2.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Phone = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    EnderecoId = table.Column<int>(type: "int", nullable: true),
+                    EnderecoId = table.Column<int>(type: "int", nullable: false),
                     ValorHora = table.Column<float>(type: "float", nullable: false),
                     NHoras = table.Column<float>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Funcionario", x => x.FuncionarioId);
+                    table.PrimaryKey("PK_Funcionario", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Funcionario_Endereco_EnderecoId",
                         column: x => x.EnderecoId,
                         principalTable: "Endereco",
-                        principalColumn: "EnderecoId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -234,20 +284,21 @@ namespace Avernus_Games_v2.Migrations
                 name: "Venda",
                 columns: table => new
                 {
-                    VendaId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ClienteId = table.Column<int>(type: "int", nullable: true),
+                    ClienteId = table.Column<int>(type: "int", nullable: false),
                     Nf = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Venda", x => x.VendaId);
+                    table.PrimaryKey("PK_Venda", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Venda_Cliente_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Cliente",
-                        principalColumn: "ClienteId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -263,22 +314,24 @@ namespace Avernus_Games_v2.Migrations
                     Markup = table.Column<float>(type: "float", nullable: false),
                     Descricao = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CategoriaCatID = table.Column<int>(type: "int", nullable: true),
-                    FornecedorId = table.Column<int>(type: "int", nullable: true)
+                    CategoriaId = table.Column<int>(type: "int", nullable: false),
+                    FornecedorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Produto", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Produto_CatProduto_CategoriaCatID",
-                        column: x => x.CategoriaCatID,
+                        name: "FK_Produto_CatProduto_CategoriaId",
+                        column: x => x.CategoriaId,
                         principalTable: "CatProduto",
-                        principalColumn: "CatID");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Produto_Fornecedor_FornecedorId",
                         column: x => x.FornecedorId,
                         principalTable: "Fornecedor",
-                        principalColumn: "FornecedorId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -287,10 +340,10 @@ namespace Avernus_Games_v2.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    GeneroId = table.Column<int>(type: "int", nullable: true),
+                    GeneroId = table.Column<int>(type: "int", nullable: false),
                     ReleaseDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
-                    DesenvolvedorId = table.Column<int>(type: "int", nullable: true),
-                    PlataformaID = table.Column<int>(type: "int", nullable: true)
+                    DesenvolvedorId = table.Column<int>(type: "int", nullable: false),
+                    PlataformaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -299,17 +352,20 @@ namespace Avernus_Games_v2.Migrations
                         name: "FK_Game_Desenvolvedor_DesenvolvedorId",
                         column: x => x.DesenvolvedorId,
                         principalTable: "Desenvolvedor",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Game_Genero_GeneroId",
                         column: x => x.GeneroId,
                         principalTable: "Genero",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Game_Plataforma_PlataformaID",
-                        column: x => x.PlataformaID,
+                        name: "FK_Game_Plataforma_PlataformaId",
+                        column: x => x.PlataformaId,
                         principalTable: "Plataforma",
-                        principalColumn: "PlataformaID");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Game_Produto_Id",
                         column: x => x.Id,
@@ -323,25 +379,27 @@ namespace Avernus_Games_v2.Migrations
                 name: "ItemVenda",
                 columns: table => new
                 {
-                    ItemVendaId = table.Column<int>(type: "int", nullable: false)
+                    VendaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ProdutoId = table.Column<int>(type: "int", nullable: true),
-                    Qtd = table.Column<int>(type: "int", nullable: false),
-                    VendaId = table.Column<int>(type: "int", nullable: true)
+                    VendaId1 = table.Column<int>(type: "int", nullable: false),
+                    ProdutoId = table.Column<int>(type: "int", nullable: false),
+                    Qtd = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ItemVenda", x => x.ItemVendaId);
+                    table.PrimaryKey("PK_ItemVenda", x => x.VendaId);
                     table.ForeignKey(
                         name: "FK_ItemVenda_Produto_ProdutoId",
                         column: x => x.ProdutoId,
                         principalTable: "Produto",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ItemVenda_Venda_VendaId",
-                        column: x => x.VendaId,
+                        name: "FK_ItemVenda_Venda_VendaId1",
+                        column: x => x.VendaId1,
                         principalTable: "Venda",
-                        principalColumn: "VendaId");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -350,9 +408,9 @@ namespace Avernus_Games_v2.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    EditoraId = table.Column<int>(type: "int", nullable: true),
+                    EditoraId = table.Column<int>(type: "int", nullable: false),
                     ReleaseDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
-                    SistemaId = table.Column<int>(type: "int", nullable: true)
+                    SistemaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -361,7 +419,8 @@ namespace Avernus_Games_v2.Migrations
                         name: "FK_RPGame_Editora_EditoraId",
                         column: x => x.EditoraId,
                         principalTable: "Editora",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_RPGame_Produto_Id",
                         column: x => x.Id,
@@ -372,7 +431,8 @@ namespace Avernus_Games_v2.Migrations
                         name: "FK_RPGame_Sistema_SistemaId",
                         column: x => x.SistemaId,
                         principalTable: "Sistema",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -395,68 +455,77 @@ namespace Avernus_Games_v2.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Cor",
+                name: "VestCor",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Cod = table.Column<int>(type: "int", nullable: false),
-                    Nome = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    VestimentaId = table.Column<int>(type: "int", nullable: true)
+                    VestimentaId = table.Column<int>(type: "int", nullable: false),
+                    CorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cor", x => x.Id);
+                    table.PrimaryKey("PK_VestCor", x => new { x.CorId, x.VestimentaId });
                     table.ForeignKey(
-                        name: "FK_Cor_Vestimenta_VestimentaId",
+                        name: "FK_VestCor_Cor_CorId",
+                        column: x => x.CorId,
+                        principalTable: "Cor",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_VestCor_Vestimenta_VestimentaId",
                         column: x => x.VestimentaId,
                         principalTable: "Vestimenta",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Material",
+                name: "VestMaterial",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Cod = table.Column<int>(type: "int", nullable: false),
-                    Desc = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    VestimentaId = table.Column<int>(type: "int", nullable: true)
+                    VestimentaId = table.Column<int>(type: "int", nullable: false),
+                    MaterialId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Material", x => x.Id);
+                    table.PrimaryKey("PK_VestMaterial", x => new { x.MaterialId, x.VestimentaId });
                     table.ForeignKey(
-                        name: "FK_Material_Vestimenta_VestimentaId",
+                        name: "FK_VestMaterial_Material_MaterialId",
+                        column: x => x.MaterialId,
+                        principalTable: "Material",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_VestMaterial_Vestimenta_VestimentaId",
                         column: x => x.VestimentaId,
                         principalTable: "Vestimenta",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Tamanho",
+                name: "VestTamanho",
                 columns: table => new
                 {
+                    VestimentaId = table.Column<int>(type: "int", nullable: false),
                     TamanhoId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Cod = table.Column<int>(type: "int", nullable: false),
-                    Tag = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    VestimentaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tamanho", x => x.TamanhoId);
+                    table.PrimaryKey("PK_VestTamanho", x => new { x.TamanhoId, x.VestimentaId });
                     table.ForeignKey(
-                        name: "FK_Tamanho_Vestimenta_VestimentaId",
+                        name: "FK_VestTamanho_Tamanho_TamanhoId",
+                        column: x => x.TamanhoId,
+                        principalTable: "Tamanho",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_VestTamanho_Vestimenta_VestimentaId",
                         column: x => x.VestimentaId,
                         principalTable: "Vestimenta",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -464,11 +533,6 @@ namespace Avernus_Games_v2.Migrations
                 name: "IX_Cliente_EnderecoId",
                 table: "Cliente",
                 column: "EnderecoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Cor_VestimentaId",
-                table: "Cor",
-                column: "VestimentaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Fornecedor_EnderecoId",
@@ -491,9 +555,9 @@ namespace Avernus_Games_v2.Migrations
                 column: "GeneroId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Game_PlataformaID",
+                name: "IX_Game_PlataformaId",
                 table: "Game",
-                column: "PlataformaID");
+                column: "PlataformaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ItemVenda_ProdutoId",
@@ -501,19 +565,14 @@ namespace Avernus_Games_v2.Migrations
                 column: "ProdutoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ItemVenda_VendaId",
+                name: "IX_ItemVenda_VendaId1",
                 table: "ItemVenda",
-                column: "VendaId");
+                column: "VendaId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Material_VestimentaId",
-                table: "Material",
-                column: "VestimentaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Produto_CategoriaCatID",
+                name: "IX_Produto_CategoriaId",
                 table: "Produto",
-                column: "CategoriaCatID");
+                column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Produto_FornecedorId",
@@ -531,22 +590,29 @@ namespace Avernus_Games_v2.Migrations
                 column: "SistemaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tamanho_VestimentaId",
-                table: "Tamanho",
-                column: "VestimentaId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Venda_ClienteId",
                 table: "Venda",
                 column: "ClienteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VestCor_VestimentaId",
+                table: "VestCor",
+                column: "VestimentaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VestMaterial_VestimentaId",
+                table: "VestMaterial",
+                column: "VestimentaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_VestTamanho_VestimentaId",
+                table: "VestTamanho",
+                column: "VestimentaId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Cor");
-
             migrationBuilder.DropTable(
                 name: "Funcionario");
 
@@ -557,13 +623,16 @@ namespace Avernus_Games_v2.Migrations
                 name: "ItemVenda");
 
             migrationBuilder.DropTable(
-                name: "Material");
-
-            migrationBuilder.DropTable(
                 name: "RPGame");
 
             migrationBuilder.DropTable(
-                name: "Tamanho");
+                name: "VestCor");
+
+            migrationBuilder.DropTable(
+                name: "VestMaterial");
+
+            migrationBuilder.DropTable(
+                name: "VestTamanho");
 
             migrationBuilder.DropTable(
                 name: "Desenvolvedor");
@@ -582,6 +651,15 @@ namespace Avernus_Games_v2.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sistema");
+
+            migrationBuilder.DropTable(
+                name: "Cor");
+
+            migrationBuilder.DropTable(
+                name: "Material");
+
+            migrationBuilder.DropTable(
+                name: "Tamanho");
 
             migrationBuilder.DropTable(
                 name: "Vestimenta");

@@ -16,12 +16,12 @@ namespace Avernus_Games_v2.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.CatProduto", b =>
                 {
-                    b.Property<int>("CatID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -31,14 +31,14 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Desc")
                         .HasColumnType("longtext");
 
-                    b.HasKey("CatID");
+                    b.HasKey("Id");
 
                     b.ToTable("CatProduto");
                 });
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Cliente", b =>
                 {
-                    b.Property<int>("ClienteId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -48,10 +48,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("EnderecoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Endereco_id")
+                    b.Property<int>("EnderecoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -63,7 +60,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Telefone")
                         .HasColumnType("longtext");
 
-                    b.HasKey("ClienteId");
+                    b.HasKey("Id");
 
                     b.HasIndex("EnderecoId");
 
@@ -82,12 +79,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("VestimentaId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("VestimentaId");
 
                     b.ToTable("Cor");
                 });
@@ -101,7 +93,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Estudio")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("NomeDesenvolvedor")
+                    b.Property<string>("NomeDev")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -131,7 +123,7 @@ namespace Avernus_Games_v2.Migrations
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Endereco", b =>
                 {
-                    b.Property<int>("EnderecoId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -150,14 +142,14 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Rua")
                         .HasColumnType("longtext");
 
-                    b.HasKey("EnderecoId");
+                    b.HasKey("Id");
 
                     b.ToTable("Endereco");
                 });
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Fornecedor", b =>
                 {
-                    b.Property<int>("FornecedorId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -167,7 +159,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("EnderecoId")
+                    b.Property<int>("EnderecoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -176,7 +168,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Telefone")
                         .HasColumnType("longtext");
 
-                    b.HasKey("FornecedorId");
+                    b.HasKey("Id");
 
                     b.HasIndex("EnderecoId");
 
@@ -185,7 +177,7 @@ namespace Avernus_Games_v2.Migrations
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Funcionario", b =>
                 {
-                    b.Property<int>("FuncionarioId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -195,7 +187,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("EnderecoId")
+                    b.Property<int>("EnderecoId")
                         .HasColumnType("int");
 
                     b.Property<float>("NHoras")
@@ -213,7 +205,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<float>("ValorHora")
                         .HasColumnType("float");
 
-                    b.HasKey("FuncionarioId");
+                    b.HasKey("Id");
 
                     b.HasIndex("EnderecoId");
 
@@ -239,24 +231,24 @@ namespace Avernus_Games_v2.Migrations
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.ItemVenda", b =>
                 {
-                    b.Property<int>("ItemVendaId")
+                    b.Property<int>("VendaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProdutoId")
+                    b.Property<int>("ProdutoId")
                         .HasColumnType("int");
 
                     b.Property<int>("Qtd")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VendaId")
+                    b.Property<int>("VendaId1")
                         .HasColumnType("int");
 
-                    b.HasKey("ItemVendaId");
+                    b.HasKey("VendaId");
 
                     b.HasIndex("ProdutoId");
 
-                    b.HasIndex("VendaId");
+                    b.HasIndex("VendaId1");
 
                     b.ToTable("ItemVenda");
                 });
@@ -273,19 +265,14 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Desc")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("VestimentaId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("VestimentaId");
 
                     b.ToTable("Material");
                 });
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Plataforma", b =>
                 {
-                    b.Property<int>("PlataformaID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -295,7 +282,7 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("longtext");
 
-                    b.HasKey("PlataformaID");
+                    b.HasKey("Id");
 
                     b.ToTable("Plataforma");
                 });
@@ -306,13 +293,13 @@ namespace Avernus_Games_v2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoriaCatID")
+                    b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Descricao")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("FornecedorId")
+                    b.Property<int>("FornecedorId")
                         .HasColumnType("int");
 
                     b.Property<float>("Markup")
@@ -326,7 +313,7 @@ namespace Avernus_Games_v2.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaCatID");
+                    b.HasIndex("CategoriaId");
 
                     b.HasIndex("FornecedorId");
 
@@ -354,7 +341,7 @@ namespace Avernus_Games_v2.Migrations
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Tamanho", b =>
                 {
-                    b.Property<int>("TamanhoId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -364,46 +351,86 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<string>("Tag")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("VestimentaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TamanhoId");
-
-                    b.HasIndex("VestimentaId");
+                    b.HasKey("Id");
 
                     b.ToTable("Tamanho");
                 });
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Venda", b =>
                 {
-                    b.Property<int>("VendaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("ClienteId")
+                    b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nf")
                         .HasColumnType("longtext");
 
-                    b.HasKey("VendaId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ClienteId");
 
                     b.ToTable("Venda");
                 });
 
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.VestCor", b =>
+                {
+                    b.Property<int>("CorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VestimentaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CorId", "VestimentaId");
+
+                    b.HasIndex("VestimentaId");
+
+                    b.ToTable("VestCor");
+                });
+
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.VestMaterial", b =>
+                {
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VestimentaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MaterialId", "VestimentaId");
+
+                    b.HasIndex("VestimentaId");
+
+                    b.ToTable("VestMaterial");
+                });
+
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.VestTamanho", b =>
+                {
+                    b.Property<int>("TamanhoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VestimentaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TamanhoId", "VestimentaId");
+
+                    b.HasIndex("VestimentaId");
+
+                    b.ToTable("VestTamanho");
+                });
+
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Game", b =>
                 {
                     b.HasBaseType("Avernus_Games_Store.src.Models.Produto");
 
-                    b.Property<int?>("DesenvolvedorId")
+                    b.Property<int>("DesenvolvedorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("GeneroId")
+                    b.Property<int>("GeneroId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PlataformaID")
+                    b.Property<int>("PlataformaId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ReleaseDate")
@@ -413,7 +440,7 @@ namespace Avernus_Games_v2.Migrations
 
                     b.HasIndex("GeneroId");
 
-                    b.HasIndex("PlataformaID");
+                    b.HasIndex("PlataformaId");
 
                     b.ToTable("Game", (string)null);
                 });
@@ -422,13 +449,13 @@ namespace Avernus_Games_v2.Migrations
                 {
                     b.HasBaseType("Avernus_Games_Store.src.Models.Produto");
 
-                    b.Property<int?>("EditoraId")
+                    b.Property<int>("EditoraId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ReleaseDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int?>("SistemaId")
+                    b.Property<int>("SistemaId")
                         .HasColumnType("int");
 
                     b.HasIndex("EditoraId");
@@ -449,23 +476,20 @@ namespace Avernus_Games_v2.Migrations
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Endereco", "Endereco")
                         .WithMany()
-                        .HasForeignKey("EnderecoId");
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Endereco");
-                });
-
-            modelBuilder.Entity("Avernus_Games_Store.src.Models.Cor", b =>
-                {
-                    b.HasOne("Avernus_Games_Store.src.Models.Vestimenta", null)
-                        .WithMany("Cores")
-                        .HasForeignKey("VestimentaId");
                 });
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Fornecedor", b =>
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Endereco", "Endereco")
                         .WithMany()
-                        .HasForeignKey("EnderecoId");
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Endereco");
                 });
@@ -474,7 +498,9 @@ namespace Avernus_Games_v2.Migrations
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Endereco", "Endereco")
                         .WithMany()
-                        .HasForeignKey("EnderecoId");
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Endereco");
                 });
@@ -483,62 +509,121 @@ namespace Avernus_Games_v2.Migrations
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Produto", "Produto")
                         .WithMany()
-                        .HasForeignKey("ProdutoId");
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Avernus_Games_Store.src.Models.Venda", null)
-                        .WithMany("Itens")
-                        .HasForeignKey("VendaId");
+                    b.HasOne("Avernus_Games_Store.src.Models.Venda", "Venda")
+                        .WithMany()
+                        .HasForeignKey("VendaId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Produto");
-                });
 
-            modelBuilder.Entity("Avernus_Games_Store.src.Models.Material", b =>
-                {
-                    b.HasOne("Avernus_Games_Store.src.Models.Vestimenta", null)
-                        .WithMany("Materiais")
-                        .HasForeignKey("VestimentaId");
+                    b.Navigation("Venda");
                 });
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Produto", b =>
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.CatProduto", "Categoria")
                         .WithMany()
-                        .HasForeignKey("CategoriaCatID");
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Avernus_Games_Store.src.Models.Fornecedor", "Fornecedor")
                         .WithMany()
-                        .HasForeignKey("FornecedorId");
+                        .HasForeignKey("FornecedorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Categoria");
 
                     b.Navigation("Fornecedor");
                 });
 
-            modelBuilder.Entity("Avernus_Games_Store.src.Models.Tamanho", b =>
-                {
-                    b.HasOne("Avernus_Games_Store.src.Models.Vestimenta", null)
-                        .WithMany("Tamanhos")
-                        .HasForeignKey("VestimentaId");
-                });
-
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Venda", b =>
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Cliente", "Cliente")
                         .WithMany()
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.VestCor", b =>
+                {
+                    b.HasOne("Avernus_Games_Store.src.Models.Cor", "Cor")
+                        .WithMany("VestCores")
+                        .HasForeignKey("CorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Avernus_Games_Store.src.Models.Vestimenta", "Vestimenta")
+                        .WithMany()
+                        .HasForeignKey("VestimentaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cor");
+
+                    b.Navigation("Vestimenta");
+                });
+
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.VestMaterial", b =>
+                {
+                    b.HasOne("Avernus_Games_Store.src.Models.Material", "Material")
+                        .WithMany()
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Avernus_Games_Store.src.Models.Vestimenta", "Vestimenta")
+                        .WithMany()
+                        .HasForeignKey("VestimentaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Material");
+
+                    b.Navigation("Vestimenta");
+                });
+
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.VestTamanho", b =>
+                {
+                    b.HasOne("Avernus_Games_Store.src.Models.Tamanho", "Tamanho")
+                        .WithMany()
+                        .HasForeignKey("TamanhoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Avernus_Games_Store.src.Models.Vestimenta", "Vestimenta")
+                        .WithMany()
+                        .HasForeignKey("VestimentaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tamanho");
+
+                    b.Navigation("Vestimenta");
                 });
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Game", b =>
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Desenvolvedor", "Desenvolvedor")
                         .WithMany()
-                        .HasForeignKey("DesenvolvedorId");
+                        .HasForeignKey("DesenvolvedorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Avernus_Games_Store.src.Models.Genero", "Genero")
                         .WithMany()
-                        .HasForeignKey("GeneroId");
+                        .HasForeignKey("GeneroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Avernus_Games_Store.src.Models.Produto", null)
                         .WithOne()
@@ -548,7 +633,9 @@ namespace Avernus_Games_v2.Migrations
 
                     b.HasOne("Avernus_Games_Store.src.Models.Plataforma", "Plataforma")
                         .WithMany()
-                        .HasForeignKey("PlataformaID");
+                        .HasForeignKey("PlataformaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Desenvolvedor");
 
@@ -561,7 +648,9 @@ namespace Avernus_Games_v2.Migrations
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Editora", "Editora")
                         .WithMany()
-                        .HasForeignKey("EditoraId");
+                        .HasForeignKey("EditoraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Avernus_Games_Store.src.Models.Produto", null)
                         .WithOne()
@@ -571,7 +660,9 @@ namespace Avernus_Games_v2.Migrations
 
                     b.HasOne("Avernus_Games_Store.src.Models.Sistema", "Sistema")
                         .WithMany()
-                        .HasForeignKey("SistemaId");
+                        .HasForeignKey("SistemaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Editora");
 
@@ -587,18 +678,9 @@ namespace Avernus_Games_v2.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Avernus_Games_Store.src.Models.Venda", b =>
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.Cor", b =>
                 {
-                    b.Navigation("Itens");
-                });
-
-            modelBuilder.Entity("Avernus_Games_Store.src.Models.Vestimenta", b =>
-                {
-                    b.Navigation("Cores");
-
-                    b.Navigation("Materiais");
-
-                    b.Navigation("Tamanhos");
+                    b.Navigation("VestCores");
                 });
 #pragma warning restore 612, 618
         }

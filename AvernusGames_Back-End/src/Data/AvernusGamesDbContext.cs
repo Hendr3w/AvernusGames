@@ -35,6 +35,11 @@ namespace Avernus_Games_Store.src.Data
             modelBuilder.Entity<RPGame>().ToTable("RPGame");
             modelBuilder.Entity<Vestimenta>().ToTable("Vestimenta");
 
+            modelBuilder.Entity<VestCor>().HasKey(cc => new { cc.CorId, cc.VestimentaId });
+            modelBuilder.Entity<VestTamanho>().HasKey(cc => new { cc.TamanhoId, cc.VestimentaId });
+            modelBuilder.Entity<VestMaterial>().HasKey(cc => new { cc.MaterialId, cc.VestimentaId });
+
+
 
             
         }

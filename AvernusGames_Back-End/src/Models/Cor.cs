@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations.Schema;
         public int Id { get; set; }
         public int Cod { get; set; }
         public string? Nome { get; set; }
-        public ICollection<VestCor> VestCores { get; set; }
+        public ICollection<VestCor>? VestCores { get; set; }
 
         public Cor(){} // Construtor vazio
     }
