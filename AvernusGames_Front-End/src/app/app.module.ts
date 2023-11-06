@@ -10,14 +10,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-import { ClienteService } from './cliente.service';
-import { ClienteComponent } from './components/cliente/cliente.component';
-import { ClientesComponent } from './clientes/clientes.component';
+import { ClienteService } from './services/clientes/clientes.service';
+import { ClientesComponent } from './components/clientes/clientes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClienteComponent,
+    ClientesComponent,
     ClientesComponent
   ],
   imports: [

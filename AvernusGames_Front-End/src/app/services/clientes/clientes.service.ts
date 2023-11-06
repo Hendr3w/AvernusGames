@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Cliente} from './Cliente';
+import { Cliente} from '../../models/Cliente';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -32,10 +32,10 @@ export class ClienteService {
     return this.http.post<Cliente>(url, cliente, httpOptions)
   }
   
-  /*atualizar(cliente : Cliente) : Observable<any> {
+  atualizar(cliente : Cliente) : Observable<any> {
     const url = `${this.apiUrl}/atualizarCliente`;
     return this.http.put<Cliente>(url, cliente, httpOptions)
-  }*/
+  }
 
   excluir(cpf : string) : Observable<any> {
     const url = `${this.apiUrl}/excluir_id${cpf}`
