@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o9wSRKxX5RG+IdkXq3cDGuA2bQAttwLLi1E7U21QxX2J8Gi382/A+CtFumHAZw2YaU1Zja+rSQ6kDs0S4p7xaQ==",
+  "dgSpecHash": "Nh2LQutnRDb7M9bUR9c24LkOPeIDJD5wp5bJO2hbsnZTGBOYP+Rc35udCjPUK/OVeOUghMSCqtFV9TnHVTWNiw==",
   "success": true,
-  "projectFilePath": "E:\\WorkSpace_C#\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
+  "projectFilePath": "E:\\WorkSpace_CSharp\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hendr\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\hendr\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
