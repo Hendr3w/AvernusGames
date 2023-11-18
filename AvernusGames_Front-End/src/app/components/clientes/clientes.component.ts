@@ -19,16 +19,23 @@ export class ClientesComponent implements OnInit {
       nome: new FormControl(null),
       cpf: new FormControl(null),
       email: new FormControl(null),
-      senha: new FormControl(null),
+      senha : new FormControl(null),
       telefone: new FormControl(null),
-      //endereco : new FormGroup(null)
+      endereco : new FormGroup({
+        pais : new FormControl(null),
+        estado : new FormControl(null),
+        cidade : new FormControl(null),
+        rua : new FormControl(null),
+        num : new FormControl(null)
+      })
     })
   }
 
   enviarFormulario(): void {
     const cliente : Cliente = this.formulario.value;
-    this.clientesService.cadastrar(cliente).subscribe(result => {alert('Cliente cadastrado com sucesso.');
+    this.clientesService.cadastrar(cliente).subscribe(result => {
+      alert('Cliente inserido com sucesso.');
     })
-  }
+  } 
 
 }
