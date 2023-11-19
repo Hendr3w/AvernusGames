@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Avernus_Games_Store.src;
 
 [ApiController]
-[Route("Controller")]
+[Route("funcionario")]
 
 public class FuncionarioController : ControllerBase
 {
@@ -17,7 +17,7 @@ public class FuncionarioController : ControllerBase
   }
 
   [HttpGet]
-  [Route("ListarFuncionario")]
+  [Route("listar_funcionario")]
   public async Task<ActionResult<IEnumerable<Funcionario>>> ListarFuncionario()
   {
     if(_context.Funcionario is null)
@@ -27,7 +27,7 @@ public class FuncionarioController : ControllerBase
 
   
   [HttpPost]
-  [Route("CadastroFuncionario")]
+  [Route("cadastrar_funcionario")]
   public IActionResult CadastroFuncionario(Funcionario funcionario)
   {
      // Verifica o CPF
@@ -42,7 +42,7 @@ public class FuncionarioController : ControllerBase
   }
 
   [HttpGet]
-  [Route("BuscarFuncionarioPorId")]
+  [Route("buscar_funcionario_por_id")]
   public async Task<ActionResult<Funcionario>> BuscarFuncionarioPorId(int Id)
     {
     if (_context.Funcionario is null)
@@ -54,7 +54,7 @@ public class FuncionarioController : ControllerBase
   }
 
   [HttpPut]
-  [Route("AlterarFuncionario")]
+  [Route("alterar_funcionario")]
   public async Task<IActionResult> AlterarFuncionario(Funcionario funcionario)
   {
       _context.Funcionario.Update(funcionario);
@@ -63,7 +63,7 @@ public class FuncionarioController : ControllerBase
   }
 
     [HttpPatch()]
-    [Route("AlterarSenhaFuncionario/{id}")]
+    [Route("alterar_senha_funcionario")]
     public async Task<ActionResult> AlterarSenha(int id, [FromForm] string senha)
     {
         if(_context is null) return NotFound();
@@ -76,7 +76,7 @@ public class FuncionarioController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("ExcluirFuncionario/{id}")]
+    [Route("excluir_funcionario_por_id")]
     public async Task<ActionResult> ExcluirFuncionario([FromRoute] int id)
     {
         var funcionario = await _context.Funcionario.FirstOrDefaultAsync(c => c.Id == id);

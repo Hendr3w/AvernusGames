@@ -4,12 +4,12 @@ import { Plataforma } from "./Plataforma";
 import { Produto } from "./Produto";
 
 export class Game extends Produto {
-    genero: Genero | null = null;
+    genero: Genero = new Genero;
     generoId: number = 0;
-    releaseDate: Date | null = null;
-    desenvolvedor: Desenvolvedor | null = null;
+    releaseDate?: Date;
+    desenvolvedor: Desenvolvedor = new Desenvolvedor();
     desenvolvedorId: number = 0;
-    plataforma: Plataforma | null = null;
+    plataforma: Plataforma = new Plataforma();
     plataformaId: number = 0;
   
     CalcValorVenda(ValorCompra: number, Markup: number): number {

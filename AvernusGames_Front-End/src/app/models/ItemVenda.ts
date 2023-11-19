@@ -3,9 +3,9 @@ import { Venda } from "./Venda";
 
 export class ItemVenda {
     vendaId: number = 0;
-    venda: Venda | null = null;
+    venda: Venda = new Venda();
     produtoId: number = 0;
-    produto: Produto | null = null;
+    produto?: Produto;
     qtd: number = 0;
   }
   

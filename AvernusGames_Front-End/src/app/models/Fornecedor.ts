@@ -2,11 +2,11 @@ import { Endereco } from "./Endereco";
 
 export class Fornecedor {
     id: number = 0;
-    cnpj: string | null = null;
-    nome: string | null = null;
-    email: string | null = null;
-    telefone: string | null = null;
-    endereco: Endereco | null = null;
+    cnpj: string = '';
+    nome: string = '';
+    email: string = '';
+    telefone: string = '';
+    endereco: Endereco = new Endereco();
     enderecoId: number = 0;
   }
   
