@@ -1,7 +1,7 @@
 import { Component, OnInit, importProvidersFrom } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Funcionario } from 'src/app/models/Funcionario';
-import { FuncionariosService } from 'src/app/funcionarios.service';
+import { FuncionariosService } from 'src/app/services/funcionarios.service';
 import { ReactiveFormsModule } from '@angular/forms'; 
 
 @Component({
