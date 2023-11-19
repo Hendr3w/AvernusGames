@@ -1,12 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FuncionariosComponent } from './funcionario.component';
 
-namespace AvernusGames_Front-End.src.app.components.funcionarios
-{
-    public class funcionario.component.spec.ts
-    {
-        
-    }
-}
+describe('FuncionariosComponent', () => {
+  let component: FuncionariosComponent;
+  let fixture: ComponentFixture<FuncionariosComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [FuncionariosComponent]
+    });
+    fixture = TestBed.createComponent(FuncionariosComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
