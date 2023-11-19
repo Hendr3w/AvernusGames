@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\WorkSpace_CSharp\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {}
   },
   "projects": {
-    "E:\\WorkSpace_CSharp\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\WorkSpace_CSharp\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
         "projectName": "Avernus_Games_v2",
-        "projectPath": "E:\\WorkSpace_CSharp\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
-        "packagesPath": "C:\\Users\\hendr\\.nuget\\packages\\",
-        "outputPath": "E:\\WorkSpace_CSharp\\AvernusGames\\AvernusGames_Back-End\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\AvernusGames\\AvernusGames_Back-End\\Avernus_Games_v2.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\AvernusGames\\AvernusGames_Back-End\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hendr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
