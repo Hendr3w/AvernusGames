@@ -28,7 +28,7 @@ public class GameController : ControllerBase
 
 
   // --------------------------   CRUD GAME --------------------------------------------------
-  // Postar Games:
+  // Cadastrar Games:
   [HttpPost]
   [Route("cadastrar_game")]
   public IActionResult CadastrarGame(Game game)

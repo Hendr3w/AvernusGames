@@ -48,7 +48,7 @@ namespace Avernus_Games_Store.src.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=127.0.0.1;Port=3306;Database=Avernus;User=root;Password=0146;";
+            string connectionString = "Server=127.0.0.1;Port=3306;Database=Avernus;User=root;Password=12345678;";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
 

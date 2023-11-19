@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './clientes.component.html',
   styleUrls: ['./clientes.component.css']
 })
+
 export class ClientesComponent implements OnInit {
   formulario : any 
   tituloFormulario : string = '';

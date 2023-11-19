@@ -16,12 +16,16 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { VendasService } from './vendas.service';
 import { VendasComponent } from './components/vendas/vendas.component';
 
+import { GamesService } from './games.service';
+import { GamesComponent } from './components/games/games.component';
+
 import { PreLoginComponent } from './components/pre-login/pre-login.component';
 import { LoginClienteComponent } from './components/login-cliente/login-cliente.component';
 
 import { FornecedoresService } from './fornecedores.service';
 import { FornecedoresComponent } from './components/fornecedores/fornecedores.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { HomeComponent } from './components/home/home.component';
     PreLoginComponent,
     LoginClienteComponent,
     FornecedoresComponent,
-    HomeComponent
+    HomeComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ import { HomeComponent } from './components/home/home.component';
     ReactiveFormsModule,
     ModalModule.forRoot()
   ],
-  providers: [HttpClientModule, ClientesService, VendasService, FornecedoresService],
+  providers: [HttpClientModule, ClientesService, VendasService, FornecedoresService, GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

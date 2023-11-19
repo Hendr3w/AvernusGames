@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avernus_Games_v2.Migrations
 {
     [DbContext(typeof(AvernusGamesDbContext))]
-    [Migration("20231106094226_inicial")]
+    [Migration("20231119205956_inicial")]
     partial class inicial
     {
         /// <inheritdoc />
@@ -560,7 +560,7 @@ namespace Avernus_Games_v2.Migrations
             modelBuilder.Entity("Avernus_Games_Store.src.Models.VestCor", b =>
                 {
                     b.HasOne("Avernus_Games_Store.src.Models.Cor", "Cor")
-                        .WithMany("VestCores")
+                        .WithMany()
                         .HasForeignKey("CorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -679,11 +679,6 @@ namespace Avernus_Games_v2.Migrations
                         .HasForeignKey("Avernus_Games_Store.src.Models.Vestimenta", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Avernus_Games_Store.src.Models.Cor", b =>
-                {
-                    b.Navigation("VestCores");
                 });
 #pragma warning restore 612, 618
         }
