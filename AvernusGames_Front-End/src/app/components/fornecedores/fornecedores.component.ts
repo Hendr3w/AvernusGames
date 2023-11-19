@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Fornecedor } from 'src/app/models/Fornecedor';
-import { FornecedoresService } from 'src/app/fornecedores.service';
+import { FornecedoresService } from 'src/app/services/fornecedores.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({

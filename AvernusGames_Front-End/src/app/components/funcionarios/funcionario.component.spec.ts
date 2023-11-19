@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FuncionariosComponent } from './funcionarios.component';
+import { FuncionariosComponent } from './funcionario.component';
 
 describe('FuncionariosComponent', () => {
   let component: FuncionariosComponent;

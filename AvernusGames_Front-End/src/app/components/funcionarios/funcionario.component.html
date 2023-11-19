@@ -1,4 +1,6 @@
-<div class="all" style="text-align: center; color: white;">
+<!-- funcionarios.component.html -->
+
+<div class="funcionarios-container">
   <h2>{{ tituloFormulario }}</h2>
 
   <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
@@ -28,13 +30,31 @@
     </div>
 
     <div formGroupName="endereco">
-      <label for="rua">Rua:</label>
-      <input type="text" id="rua" formControlName="rua" />
+      <label for="pais">País:</label>
+      <input type="text" id="pais" formControlName="pais" />
+
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" formControlName="estado" />
 
       <label for="cidade">Cidade:</label>
       <input type="text" id="cidade" formControlName="cidade" />
+
+      <label for="rua">Rua:</label>
+      <input type="text" id="rua" formControlName="rua" />
+
+      <label for="num">Número:</label>
+      <input type="text" id="num" formControlName="num" />
     </div>
 
+    <div>
+      <label for="valorHora">Valor Hora:</label>
+      <input type="number" id="valorHora" formControlName="valorHora" />
+    </div>
+
+    <div>
+      <label for="nHoras">Número de Horas:</label>
+      <input type="number" id="nHoras" formControlName="nHoras" />
+    </div>
 
     <button type="submit">Enviar</button>
   </form>

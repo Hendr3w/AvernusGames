@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 import { Cliente } from 'src/app/models/Cliente';
-import { ClientesService } from 'src/app/clientes.service';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { InteropObservable } from 'rxjs';
 
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth-service.service';
+import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-login-cliente',

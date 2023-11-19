@@ -1,7 +1,7 @@
 // auth.service.ts
 
 import { Injectable } from '@angular/core';
-import { Cliente } from './models/Cliente';
+import { Cliente } from '../models/Cliente';
 
 @Injectable({
   providedIn: 'root'

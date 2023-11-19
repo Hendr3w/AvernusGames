@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Cliente } from 'src/app/models/Cliente';
-import { ClientesService } from 'src/app/clientes.service';
+import { ClientesService } from 'src/app/services/clientes.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
