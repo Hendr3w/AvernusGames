@@ -42,4 +42,8 @@ export class ClientesService {
     return this.http.delete<string>(url, httpOptions)
   }
   
+  buscarEmail(email: string): Observable<Cliente> {
+    const url = `${this.apiUrl}/buscar_email_do_cliente/${email}`;
+    return this.http.get<Cliente>(url);
+  }
 }

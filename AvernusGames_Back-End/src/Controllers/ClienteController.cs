@@ -6,7 +6,7 @@ using Avernus_Games_Store.src;
 
 
 [ApiController]
-[Route("Controller")]
+[Route("cliente")]
 public class ClienteController : ControllerBase
 {
     private AvernusGamesDbContext? _context;

@@ -3,8 +3,8 @@ import { Vestimenta } from "./Vestimenta";
 
 export class VestTamanho {
     vestimentaId: number = 0;
-    vestimenta: Vestimenta | null = null;
+    vestimenta: Vestimenta = new Vestimenta();
     tamanhoId: number = 0;
-    tamanho: Tamanho | null = null;
+    tamanho: Tamanho = new Tamanho();
   }
   

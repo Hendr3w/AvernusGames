@@ -3,10 +3,10 @@ import { Produto } from "./Produto";
 import { Sistema } from "./Sistema";
 
 export class RPGame extends Produto {
-    editora: Editora | null = null;
+    editora: Editora = new Editora();
     editoraId: number = 0;
-    releaseDate: Date | null = null;
-    sistema: Sistema | null = null;
+    releaseDate?: Date;
+    sistema: Sistema = new Sistema();
     sistemaId: number = 0;
   
     CalcValorVenda(ValorCompra: number, Markup: number): number {

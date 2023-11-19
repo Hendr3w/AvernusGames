@@ -6,7 +6,7 @@ using Avernus_Games_Store.src;
 
 
 [ApiController]
-[Route("Controller")]
+[Route("fornecedor")]
 public class FornecedorController : ControllerBase
 {
     private AvernusGamesDbContext? _context;
@@ -17,7 +17,7 @@ public class FornecedorController : ControllerBase
     }
 
     [HttpGet]
-    [Route("ListarFornecedor")]
+    [Route("listar_fornecedor")]
     public async Task<ActionResult<IEnumerable<Fornecedor>>> LisListarFornecedortar()
     {
         if(_context.Fornecedor is null)
@@ -26,7 +26,7 @@ public class FornecedorController : ControllerBase
     } 
 
     [HttpPost]
-    [Route("CadastrarFornecedor")]
+    [Route("cadastrar_fornecedor")]
     public IActionResult CadastrarFornecedor(Fornecedor fornecedor)
     {
         //Não vamos verificar CNPJ por enquanto
@@ -40,7 +40,7 @@ public class FornecedorController : ControllerBase
     
 
     [HttpGet]
-    [Route("BuscarFornecedorPorCNPJ")]
+    [Route("buscar_fornecedor_por_cnpj")]
     public async Task<ActionResult<Fornecedor>> BuscarFornecedorPorCNPJ(string cnpj)
     {
         if(_context.Fornecedor is null)
@@ -52,7 +52,7 @@ public class FornecedorController : ControllerBase
     }    
 
     [HttpGet]
-    [Route("BuscarFornecedorPorNome")]
+    [Route("buscar_fornecedor_por_nome")]
     public async Task<ActionResult<List<Fornecedor>>> BuscarFornecedorPorNome(string nome)
     {
     if (_context.Fornecedor is null)
@@ -64,7 +64,7 @@ public class FornecedorController : ControllerBase
     }
 
     [HttpGet]
-    [Route("BuscarFornecedorPorEmail")]
+    [Route("buscar_fornecedor_por_email")]
     public async Task<ActionResult<Fornecedor>> BuscarFornecedorPorEmail(string email)
     {
     if (_context.Fornecedor is null)
@@ -76,7 +76,7 @@ public class FornecedorController : ControllerBase
     }
 
     [HttpPut]
-    [Route("AlterarFornecedor")]
+    [Route("alterar_fornecedor")]
     public async Task<IActionResult> AlterarFornecedor(Fornecedor fornecedor)
     {
         _context.Fornecedor.Update(fornecedor);
@@ -85,7 +85,7 @@ public class FornecedorController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("ExcluirFornecedorPorID - Fornecedor")]
+    [Route("excluir_fornecedor_por_id")]
     public async Task<ActionResult> ExcluirFornecedorPorID(int id)
     {
         var fornecedorExistente = await _context.Fornecedor.FirstOrDefaultAsync(f => f.Id == id);

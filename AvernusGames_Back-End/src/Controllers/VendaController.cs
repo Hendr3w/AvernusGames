@@ -4,7 +4,7 @@ using Avernus_Games_Store.src.Models;
 using Microsoft.EntityFrameworkCore;
 
 [ApiController]
-[Route("Controller")]
+[Route("venda")]
 public class VendaController : ControllerBase
 {
     private AvernusGamesDbContext _context;
@@ -15,7 +15,7 @@ public class VendaController : ControllerBase
     }
 
     [HttpPost]
-    [Route("CadastrarVenda")]
+    [Route("cadastrar_venda")]
     public IActionResult CadastrarVenda(Venda venda)
     {
         _context.Add(venda);
@@ -24,7 +24,7 @@ public class VendaController : ControllerBase
     }
 
     [HttpGet]
-    [Route("ListarVenda")]
+    [Route("listar_venda")]
     public async Task<ActionResult<IEnumerable<Venda>>> ListarVenda()
     {
         if(_context.Venda is null)
@@ -44,9 +44,9 @@ public class VendaController : ControllerBase
         return NoContent();
     }*/
 
-    //BUSCAR POR CPF
+    //BUSCAR POR Nf
     [HttpGet]
-    [Route("BuscarVendaNF")]
+    [Route("buscar_venda_nf")]
     public async Task<ActionResult<Venda>> BuscarVendaNF (string nf)
     {
         if(_context.Venda is null)
@@ -56,4 +56,20 @@ public class VendaController : ControllerBase
             return NotFound();
         return venda;
     } 
+
+    [HttpGet]
+    [Route("buscar_venda_cliente")]
+    public async Task<ActionResult<List<Venda>>> BuscarVendaCliente (Cliente cliente)
+    {
+        if(_context.Venda is null)
+            return  NotFound();
+        var vendas = await _context.Venda.Where(c => c.ClienteId == cliente.Id).ToListAsync();
+        if (vendas is null)
+            return NotFound();
+        return vendas;
+    } 
+
+
+
+
 }
