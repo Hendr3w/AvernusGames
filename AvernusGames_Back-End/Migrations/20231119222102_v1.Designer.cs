@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avernus_Games_v2.Migrations
 {
     [DbContext(typeof(AvernusGamesDbContext))]
-    [Migration("20231119205956_inicial")]
-    partial class inicial
+    [Migration("20231119222102_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,16 +22,16 @@ namespace Avernus_Games_v2.Migrations
                 .HasAnnotation("ProductVersion", "7.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Avernus_Games_Store.src.Models.CatProduto", b =>
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Categoria")
+                    b.Property<string>("Desc")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Desc")
+                    b.Property<string>("Nome")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -517,7 +517,7 @@ namespace Avernus_Games_v2.Migrations
                         .IsRequired();
 
                     b.HasOne("Avernus_Games_Store.src.Models.Venda", "Venda")
-                        .WithMany()
+                        .WithMany("Itens")
                         .HasForeignKey("VendaId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -529,7 +529,7 @@ namespace Avernus_Games_v2.Migrations
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.Produto", b =>
                 {
-                    b.HasOne("Avernus_Games_Store.src.Models.CatProduto", "Categoria")
+                    b.HasOne("Avernus_Games_Store.src.Models.Categoria", "Categoria")
                         .WithMany()
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -679,6 +679,11 @@ namespace Avernus_Games_v2.Migrations
                         .HasForeignKey("Avernus_Games_Store.src.Models.Vestimenta", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Avernus_Games_Store.src.Models.Venda", b =>
+                {
+                    b.Navigation("Itens");
                 });
 #pragma warning restore 612, 618
         }

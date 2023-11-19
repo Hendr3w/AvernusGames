@@ -1,4 +1,4 @@
-import { CatProduto } from './CatProduto';
+import { Categoria } from "./CatProduto";
 import { Fornecedor } from './Fornecedor';
 
 export abstract class Produto {
@@ -7,7 +7,7 @@ export abstract class Produto {
   valorCompra: number = 0;
   markup: number = 0;
   descricao: string = '';
-  categoria: CatProduto = new CatProduto();
+  categoria: Categoria = new Categoria();
   categoriaId: number = 0;
   fornecedor: Fornecedor = new Fornecedor();
   fornecedorId: number = 0;

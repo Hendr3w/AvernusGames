@@ -10,21 +10,29 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-import { ClientesService } from './clientes.service';
+import { ClientesService } from './services/clientes.service';
 import { ClientesComponent } from './components/clientes/clientes.component';
 
-import { VendasService } from './vendas.service';
+import { VendasService } from './services/vendas.service';
 import { VendasComponent } from './components/vendas/vendas.component';
 
-import { GamesService } from './games.service';
+import { GamesService } from './services/games.service';
 import { GamesComponent } from './components/games/games.component';
 
 import { PreLoginComponent } from './components/pre-login/pre-login.component';
 import { LoginClienteComponent } from './components/login-cliente/login-cliente.component';
 
-import { FornecedoresService } from './fornecedores.service';
+import { FornecedoresService } from './services/fornecedores.service';
 import { FornecedoresComponent } from './components/fornecedores/fornecedores.component';
+
 import { HomeComponent } from './components/home/home.component';
+
+import { FuncionariosService } from './services/funcionarios.service';
+import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
+
+import { AuthService } from './services/auth-service.service';
+
+
 
 
 @NgModule({
@@ -35,6 +43,7 @@ import { HomeComponent } from './components/home/home.component';
     PreLoginComponent,
     LoginClienteComponent,
     FornecedoresComponent,
+    FuncionariosComponent,
     HomeComponent,
     GamesComponent
   ],
@@ -46,7 +55,7 @@ import { HomeComponent } from './components/home/home.component';
     ReactiveFormsModule,
     ModalModule.forRoot()
   ],
-  providers: [HttpClientModule, ClientesService, VendasService, FornecedoresService, GamesService],
+  providers: [HttpClientModule, ClientesService, VendasService, FornecedoresService, GamesService, AuthService, FuncionariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

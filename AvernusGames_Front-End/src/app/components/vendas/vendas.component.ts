@@ -5,31 +5,33 @@ import { ItemVenda } from 'src/app/models/ItemVenda';
 import { Game } from 'src/app/models/Game';
 import { Vestimenta } from 'src/app/models/Vestimenta';
 import { RPGame } from 'src/app/models/RPGame';
-//import { ProdutosService } from 'src/app/services/produtos.service'; // Substitua pelo caminho correto
-import { ClientesService } from 'src/app/services/clientes.service'; // Substitua pelo caminho correto
+import { ClientesService } from 'src/app/services/clientes.service';
 import { VendasService } from 'src/app/services/vendas.service';
+import { GamesService } from 'src/app/services/games.service';
+import { Observable, isObservable } from 'rxjs';
 
 @Component({
   selector: 'app-venda',
-  templateUrl: './venda.component.html',
-  styleUrls: ['./venda.component.css']
+  templateUrl: './vendas.component.html',
+  styleUrls: ['./vendas.component.css']
 })
-export class VendaComponent implements OnInit {
+export class VendasComponent implements OnInit {
   formulario: any;
   tituloFormulario: string = '';
-  //listaProdutos: Produto[] = [];
-  itens: ItemVenda[] = [];
+  itens : ItemVenda[] = [];
+  games : Game[] = [];
 
   constructor(
-    //private produtosService: ProdutosService,
+    private gameService : GamesService,
     private vendasService : VendasService
   ) {}
 
   ngOnInit(): void {
     this.tituloFormulario = 'Nova Venda';
-
-    // Carregar a lista de produtos
-    this.listaProdutos = this.produtosService.getProdutos();
+    
+    this.gameService.listar().subscribe((games: Game[]) => {
+      this.games = games;
+    });
 
     this.formulario = new FormGroup({
       clienteCpf: new FormControl(null),
@@ -40,7 +42,7 @@ export class VendaComponent implements OnInit {
   }
 
   adicionarItem(): void {
-    const produtoSelecionado: Produto | null = this.formulario.get('produtoSelecionado').value;
+    const produtoSelecionado: Game | null = this.formulario.get('produtoSelecionado').value;
     const quantidade: number = this.formulario.get('quantidade').value;
 
     if (produtoSelecionado && quantidade > 0) {
@@ -67,7 +69,7 @@ export class VendaComponent implements OnInit {
     venda.itens = this.itens;
 
     // Lógica para processar a venda, como chamar um serviço
-    this.clientesService.processarVenda(venda).subscribe(result => {
+    this.vendasService.cadastrar(venda).subscribe(result => {
       alert('Venda confirmada com sucesso.');
       // Limpar a lista de itens após confirmar a venda
       this.itens = [];

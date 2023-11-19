@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Avernus_Games_Store.src.Models;
 using Microsoft.EntityFrameworkCore;
 using Avernus_Games_Store.src;
+using System.Runtime.InteropServices;
 
 [ApiController]
 [Route("funcionario")]
@@ -31,13 +32,20 @@ public class FuncionarioController : ControllerBase
   public IActionResult CadastroFuncionario(Funcionario funcionario)
   {
      // Verifica o CPF
-    if (GeneralHelper.ValidarCPF(funcionario.Cpf))
+    /*if (GeneralHelper.ValidarCPF(funcionario.Cpf))
     {
       _context.Add(funcionario);  
       _context.SaveChanges(); 
       return Created("", funcionario); 
-    }
-    return BadRequest("CPF inválido.");
+    }*/
+    
+      _context.Add(funcionario);  
+      _context.SaveChanges(); 
+      return Created("", funcionario); 
+      //return BadRequest("CPF inválido.");
+
+    
+    
     
   }
 

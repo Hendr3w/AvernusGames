@@ -1,5 +1,5 @@
-export class CatProduto {
+export class Categoria {
     id: number = 0;
-    categoria: string | null = null;
+    nome: string | null = null;
     desc: string | null = null;
   }

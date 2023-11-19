@@ -23,6 +23,8 @@ export class FuncionariosComponent implements OnInit {
       email: new FormControl(null),
       senha: new FormControl(null),
       telefone: new FormControl(null),
+      valorHora: new FormControl(null),
+      nHoras: new FormControl(null),
       endereco : new FormGroup({
         pais : new FormControl(null),
         estado : new FormControl(null),
@@ -30,21 +32,13 @@ export class FuncionariosComponent implements OnInit {
         rua : new FormControl(null),
         num : new FormControl(null)
       }),
-      enderecoId: new FormControl(null),
-      valorHora: new FormControl(null),
-      nHoras: new FormControl(null)
     });
   }
 
   enviarFormulario(): void {
     const funcionario: Funcionario = this.formulario.value;
-    this.funcionarioService.cadastrar(funcionario).subscribe(
-      (result: any) => { 
-        alert('Funcionário cadastrado com sucesso.');
-      },
-      (error: any) => {
-        console.error('Erro ao cadastrar funcionário:', error);
-      }
-    );
+    this.funcionarioService.cadastrar(funcionario).subscribe(result => {
+      alert('Funcionário inserido com sucesso.')
+    })
   }
 }

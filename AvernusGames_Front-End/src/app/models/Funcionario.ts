@@ -6,8 +6,8 @@ export class Funcionario {
     cpf: string = '';
     email: string = '';
     senha: string = '';
-    phone: string = '';
-    endereco: Endereco = new Endereco();
+    telefone: string = '';
+    endereco?: Endereco;
     enderecoId: number = 0;
     valorHora: number = 0;
     nHoras: number = 0;

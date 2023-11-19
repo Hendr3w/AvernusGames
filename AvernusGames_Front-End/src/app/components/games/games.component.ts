@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Game } from 'src/app/models/Game';
-import { GamesService } from 'src/app/games.service';
+import { GamesService } from 'src/app/services/games.service';
 import { Observer } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -28,7 +28,7 @@ export class GamesComponent {
       }),
       fornecedor: new FormGroup({
         nome: new FormControl(null),
-        cnpf: new FormControl(null),
+        cnpj: new FormControl(null),
         email: new FormControl(null),
         telefone: new FormControl(null),
         endereco : new FormGroup({
@@ -57,6 +57,7 @@ export class GamesComponent {
 
   
   enviarFormulario(): void {
+    console.log("oi")
     const game : Game = this.formulario.value;
     const observer: Observer<Game> = {
       next(_result): void {

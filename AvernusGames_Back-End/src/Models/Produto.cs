@@ -14,7 +14,7 @@ namespace Avernus_Games_Store.src.Models
         public float ValorCompra { get; set; }
         public float Markup { get; set; }
         public string? Descricao { get; set; }
-        public CatProduto? Categoria { get; set; }
+        public Categoria? Categoria { get; set; }
         public int CategoriaId { get; set; }
         public Fornecedor? Fornecedor { get; set; }
         public int FornecedorId { get; set; }

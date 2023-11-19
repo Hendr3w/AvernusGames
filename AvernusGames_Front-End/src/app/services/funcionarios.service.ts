@@ -26,8 +26,8 @@ export class FuncionariosService {
   }
 
   cadastrar(funcionario: Funcionario): Observable<any> {
-    const url = `${this.apiUrl}/cadastrar_funcionario`;
-    return this.http.post<Funcionario>(url, funcionario, httpOptions);
+      const url = `${this.apiUrl}/cadastrar_funcionario`;
+      return this.http.post<Funcionario>(url, funcionario, httpOptions);
   }
 
   alterar(funcionario: Funcionario): Observable<any> {

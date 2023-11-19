@@ -23,8 +23,58 @@
       <input type="text" id="descricao" formControlName="descricao" required>
     </div>
 
+    <div formGroupName="categoria">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" formControlName="nome" />
+
+      <label for="cnpf">Cnpf:</label>
+      <input type="text" id="cnpf" formControlName="cnpf" />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" />
+
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" formControlName="telefone" />
+
+      <div formGroupName="endereco">
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" formControlName="rua" />
+  
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" formControlName="cidade" />
+
+      </div>
+    </div>
+
+    <div formGroupName="genero">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" formControlName="nome" />
+
+      <label for="desc">Desc:</label>
+      <input type="text" id="desc" formControlName="desc" />
+
+    </div>
+
+    <div formGroupName="desenvolvedor">
+      <label for="estudio">Estudio:</label>
+      <input type="text" id="estudio" formControlName="estudio" />
+
+      <label for="nomedev">Nomedev:</label>
+      <input type="text" id="nomedev" formControlName="nomedev" />
+
+    </div>
+
+    <div formGroupName="plataforma">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" formControlName="nome" />
+
+      <label for="desc">Desc:</label>
+      <input type="text" id="desc" formControlName="desc" />
+
+    </div>
+
     <!-- Adicione outros campos conforme necessário, seguindo a estrutura do seu FormGroup -->
 
     <button type="submit">Cadastrar</button>
-  </form>
+  </form>
 </div>

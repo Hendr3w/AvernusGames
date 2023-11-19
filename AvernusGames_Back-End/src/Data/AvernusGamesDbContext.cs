@@ -10,7 +10,7 @@ namespace Avernus_Games_Store.src.Data
         public DbSet<Funcionario>? Funcionario { get; set; }
         public DbSet<Fornecedor>? Fornecedor { get; set; }
         public DbSet<Produto>? Produto { get; set; }
-        public DbSet<CatProduto>? CatProduto { get; set; }
+        public DbSet<Categoria>? CatProduto { get; set; }
         public DbSet<Game>? Game { get; set; }
         public DbSet<Genero>? Genero { get; set; }
         public DbSet<Plataforma>? Plataforma { get; set; }
@@ -48,7 +48,7 @@ namespace Avernus_Games_Store.src.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=127.0.0.1;Port=3306;Database=Avernus;User=root;Password=12345678;";
+            string connectionString = "Server=127.0.0.1;Port=3306;Database=Avernus;User=root;Password=0146;";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
 
