@@ -23,7 +23,12 @@ export class FuncionariosComponent implements OnInit {
       email: new FormControl(null),
       senha: new FormControl(null),
       telefone: new FormControl(null),
-      endereco: new FormGroup({
+      endereco : new FormGroup({
+        pais : new FormControl(null),
+        estado : new FormControl(null),
+        cidade : new FormControl(null),
+        rua : new FormControl(null),
+        num : new FormControl(null)
       }),
       enderecoId: new FormControl(null),
       valorHora: new FormControl(null),
