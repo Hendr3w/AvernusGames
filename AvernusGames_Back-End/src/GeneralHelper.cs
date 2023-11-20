@@ -79,9 +79,9 @@ namespace Avernus_Games_Store.src
             else
                 return false;
         }
-        public static float CalcTotalProduto(ItemVenda item)
+        public static float CalcTotalGame(ItemVenda item)
         {
-            return item.Produto.CalcValorVenda(item.Produto.ValorCompra, item.Produto.Markup) * item.Qtd;
+            return CalcValorVenda(item.Game.ValorCompra, item.Game.Markup) * item.Qtd;
 
         }
 
@@ -89,10 +89,18 @@ namespace Avernus_Games_Store.src
             List<ItemVenda> itens = venda.Itens;
             float som = 0;
             foreach(ItemVenda x in itens){
-                som = som + (x.Produto.CalcValorVenda(x.Produto.ValorCompra, x.Produto.Markup) * x.Qtd);
+                som = som + (x.Game.CalcValorVenda(x.Game.ValorCompra, x.Game.Markup) * x.Qtd);
             }
             return som;
         }*/
+
+        public static float CalcValorVenda(float ValorCompra, float Markup)
+        {
+            float ValorVenda = ValorCompra * (1 + Markup);
+            float taxaImposto = 0.15f; // 15% de imposto
+            float ValorTotal = ValorVenda * (1 + taxaImposto);
+            return ValorTotal;
+        }
 
     }
 }

@@ -10,8 +10,8 @@ namespace Avernus_Games_Store.src.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int VendaId { get; set; }
         public Venda? Venda { get; set; }
-        public int ProdutoId { get; set; }
-        public Produto? Produto { get; set; }
+        public int GameId { get; set; }
+        public Game? Game { get; set; }
         public int Qtd { get; set; }
         public ItemVenda(){}
     }

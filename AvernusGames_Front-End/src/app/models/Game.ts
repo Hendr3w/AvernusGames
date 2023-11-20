@@ -1,22 +1,21 @@
 import { Desenvolvedor } from "./Desenvolvedor";
+import { Fornecedor } from "./Fornecedor";
 import { Genero } from "./Genero";
 import { Plataforma } from "./Plataforma";
-import { Produto } from "./Produto";
-
-export class Game extends Produto {
+export class Game {
+    id: number = 0;
+    nome: string = '';
+    descricao: string = '';
+    valorCompra: number = 0;
+    markup: number = 0;
+    fornecedor: Fornecedor = new Fornecedor();
+    fornecedorId: number = 0;
     genero: Genero = new Genero;
     generoId: number = 0;
-    releaseDate?: Date;
     desenvolvedor: Desenvolvedor = new Desenvolvedor();
     desenvolvedorId: number = 0;
     plataforma: Plataforma = new Plataforma();
     plataformaId: number = 0;
-  
-    CalcValorVenda(ValorCompra: number, Markup: number): number {
-      const ValorVenda: number = ValorCompra * (1 + Markup);
-      const taxaImposto: number = 0.15; // 15% de imposto
-      const ValorTotal: number = ValorVenda * (1 + taxaImposto);
-      return ValorTotal;
-    }
+    
   }
   
