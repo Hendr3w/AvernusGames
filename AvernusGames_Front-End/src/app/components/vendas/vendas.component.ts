@@ -3,8 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Venda } from 'src/app/models/Venda';
 import { ItemVenda } from 'src/app/models/ItemVenda';
 import { Game } from 'src/app/models/Game';
-import { Vestimenta } from 'src/app/models/Vestimenta';
-import { RPGame } from 'src/app/models/RPGame';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { VendasService } from 'src/app/services/vendas.service';
 import { GamesService } from 'src/app/services/games.service';
@@ -49,8 +47,8 @@ export class VendasComponent implements OnInit {
       const novoItem: ItemVenda = {
         vendaId: 0,
         venda: new Venda(),
-        produtoId: produtoSelecionado.id,
-        produto: produtoSelecionado,
+        gameId: produtoSelecionado.id,
+        game: produtoSelecionado,
         qtd: quantidade,
       };
 

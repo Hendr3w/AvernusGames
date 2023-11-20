@@ -1,11 +1,11 @@
-import { Produto } from "./Produto";
+import { Game } from "./Game";
 import { Venda } from "./Venda";
 
 export class ItemVenda {
     vendaId: number = 0;
     venda: Venda = new Venda();
-    produtoId: number = 0;
-    produto?: Produto;
+    gameId: number = 0;
+    game?: Game;
     qtd: number = 0;
   }
   
