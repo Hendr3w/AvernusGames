@@ -1,0 +1,15 @@
+<!-- fornecedores-list.component.html -->
+
+<div>
+    <h2>Lista de Fornecedores</h2>
+  
+    <button (click)="adicionarFornecedor()">Adicionar Fornecedor</button>
+  
+    <ul>
+      <li *ngFor="let fornecedor of fornecedores">
+        {{ fornecedor.nome }}
+        <button (click)="excluirFornecedor(fornecedor.id)">Excluir</button>
+      </li>
+    </ul>
+  </div>
+  

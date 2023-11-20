@@ -38,7 +38,7 @@ export class GamesService {
   }
 
   excluir(id : number) : Observable<any> {
-    const url = `${this.apiUrl}/deletar_game_id${id}`
+    const url = `${this.apiUrl}/deletar_game_id/${id}`
     return this.http.delete<string>(url, httpOptions)
   }
 }

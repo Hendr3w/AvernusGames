@@ -11,24 +11,22 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./games.component.css']
 })
 
-export class GamesComponent {
+export class GamesComponent implements OnInit {
   formulario : any 
   tituloFormulario : string = '';
+
   constructor(private gamesService : GamesService){ } 
+
   ngOnInit(): void {
     this.tituloFormulario = 'Novo Game'
     this.formulario = new FormGroup({
       nome: new FormControl(null),
+      descricao: new FormControl(null),
       valorcompra: new FormControl(null),
       markup: new FormControl(null),
-      descricao: new FormControl(null),
-      categoria: new FormGroup({
-        categoria: new FormControl(null),
-        desc: new FormControl(null)
-      }),
       fornecedor: new FormGroup({
         nome: new FormControl(null),
-        cpf: new FormControl(null),
+        cnpj: new FormControl(null),
         email: new FormControl(null),
         telefone: new FormControl(null),
         endereco : new FormGroup({
@@ -48,15 +46,21 @@ export class GamesComponent {
         nomedev: new FormControl(null)
       }),
       plataforma: new FormGroup({
-        nome: new FormGroup(null),
-        desc: new FormGroup(null)
+        nome: new FormControl(null),
+        desc: new FormControl(null)
       })
     })
   }
 
+ enviarFormulario(): void {
+  const game : Game = this.formulario.value;
+  this.gamesService.cadastrar(game).subscribe(result => {
+    alert('Game inserido com sucesso.');
+  })
+ }
 
   
-  enviarFormulario(): void {
+  /*enviarFormulario(): void {
     const game : Game = this.formulario.value;
     const observer: Observer<Game> = {
       next(_result): void {
@@ -68,9 +72,8 @@ export class GamesComponent {
       complete(): void {
       },
     };
-    this.gamesService.cadastrar(game).subscribe(observer);
-    /*this.gamesService.cadastrar(game).subscribe(result => {
-      alert('Game inserido com sucesso.');
-    })*/
-  } 
+    this.gamesService.cadastrar(game).subscribe(observer);*/
+    
+   
+  
 }

@@ -24,7 +24,7 @@ export class LoginClienteComponent {
     ngOnInit() : void { 
       this.tituloFormulario = 'Login Cliente'
       this.formulario = new FormGroup({
-        cpf: new FormControl(null),
+        email: new FormControl(null),
         senha : new FormControl(null)
       })
     }
@@ -32,20 +32,20 @@ export class LoginClienteComponent {
     enviarFormulario(): void { 
       const cliente : Cliente = this.formulario.value;
 
-      this.clienteService.buscarCpf(cliente.cpf).subscribe({
+      this.clienteService.buscarEmail(cliente.email).subscribe({
         next : (value) => {
-          var clienteTemp = value;
-          if(clienteTemp.cpf == this.formulario.cpf){
-            this.router.navigate(['/home']);
+          var formulario = value;
+          if(formulario.senha == cliente.senha){
+            this.router.navigate(['/vendas']);
           } else{
             alert("Senha incorreta");
           }
 
         },
         error : err => {
-            alert("Cpf não cadastrado");
+            alert("Email não cadastrado");
         }
-      })
+      });
 
     }
 

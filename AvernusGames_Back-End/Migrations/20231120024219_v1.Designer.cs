@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avernus_Games_v2.Migrations
 {
     [DbContext(typeof(AvernusGamesDbContext))]
-    [Migration("20231120015255_inicial")]
-    partial class inicial
+    [Migration("20231120024219_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

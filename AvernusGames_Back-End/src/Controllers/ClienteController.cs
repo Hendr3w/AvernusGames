@@ -85,7 +85,7 @@ public class ClienteController : ControllerBase
 
     //Buscar Cliente por E-Mail
     [HttpGet]
-    [Route("buscar_email_cliente")]
+    [Route("buscar_email/{email}")]
     public async Task<ActionResult<Cliente>> BuscarEmail(string email)
     {
     if (_context.Cliente is null)
@@ -98,7 +98,7 @@ public class ClienteController : ControllerBase
 
     //Excluir Cliente ID
     [HttpDelete]
-    [Route("excluir_id")]
+    [Route("excluir_id{id}")]
     public async Task<ActionResult> ExcluirID(int id)
     {
         var clienteExistente = await _context.Cliente.FirstOrDefaultAsync(c => c.Id == id);

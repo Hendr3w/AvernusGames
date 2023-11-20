@@ -1,1 +1,46 @@
-<p>vendas works!</p>
+<div style="text-align: center; color: white">
+  <h2>{{ tituloFormulario }}</h2>
+
+  <form [formGroup]="formulario">
+    <div>
+      <label for="clienteSelecionado">Cliente:</label>
+      <select id="clienteSelecionado" formControlName="clienteSelecionado">
+        <option [ngValue]="null" disabled selected>Selecione um cliente</option>
+        <option *ngFor="let cliente of clientes" [ngValue]="cliente">{{ cliente.nome }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="nf">Número da NF:</label>
+      <input type="text" id="nf" formControlName="nf">
+    </div>
+
+    <div>
+      <label for="produtoSelecionado">Produto:</label>
+      <select id="produtoSelecionado" formControlName="produtoSelecionado">
+        <option [ngValue]="null" disabled selected>Selecione um produto</option>
+        <option *ngFor="let game of games" [ngValue]="game">{{ game.nome }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="quantidade">Quantidade:</label>
+      <input type="number" id="quantidade" formControlName="quantidade">
+    </div>
+
+    <button type="button" (click)="adicionarItem()">Adicionar Item</button>
+
+    <div *ngIf="itens.length > 0">
+      <h3>Itens da Venda</h3>
+      <ul>
+        <li *ngFor="let item of itens">
+          {{ item.game?.nome }} - Quantidade: {{ item.qtd }} - Valor Unitário: {{ item.game?.valorCompra | currency:'BRL':'symbol':'1.2-2' }} - Valor Total: {{ (item.game?.valorCompra || 0) * item.qtd | currency:'BRL':'symbol':'1.2-2' }}
+        </li>
+      </ul>
+
+      <p>Valor Total da Venda: {{ valorTotal | currency:'BRL':'symbol':'1.2-2' }}</p>
+    </div>
+
+    <button type="button" (click)="enviarFormulario()">Confirmar Venda</button>
+  </form>
+</div>

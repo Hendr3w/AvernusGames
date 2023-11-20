@@ -43,10 +43,6 @@ public class FuncionarioController : ControllerBase
       _context.SaveChanges(); 
       return Created("", funcionario); 
       //return BadRequest("CPF inválido.");
-
-    
-    
-    
   }
 
   [HttpGet]
@@ -60,6 +56,21 @@ public class FuncionarioController : ControllerBase
         return NotFound();
     return funcionario;
   }
+
+
+  //BUSCAR POR CPF
+  [HttpGet]
+  [Route("buscar_cpf/{cpf}")]
+  public async Task<ActionResult<Funcionario>> BuscarCpf(string cpf)
+  {
+      if(_context.Funcionario is null)
+          return  NotFound();
+      var funcionario = await _context.Funcionario.FirstOrDefaultAsync(c => c.Cpf == cpf);
+      if (funcionario is null)
+          return NotFound();
+      return funcionario;
+  }
+  
 
   [HttpPut]
   [Route("alterar_funcionario")]
@@ -84,7 +95,7 @@ public class FuncionarioController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("excluir_funcionario_por_id")]
+    [Route("excluir/{id}")]
     public async Task<ActionResult> ExcluirFuncionario([FromRoute] int id)
     {
         var funcionario = await _context.Funcionario.FirstOrDefaultAsync(c => c.Id == id);

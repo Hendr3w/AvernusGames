@@ -14,11 +14,13 @@ export class PreLoginComponent {
 
   irParaLoginCliente(): void {
     // Navegar para a tela de login do cliente
-    this.router.navigate(['/login-cliente']);
+    this.router.navigate(['/login_cliente']);
   }
 
   irParaLoginGerenciador(): void {
     // Navegar para a tela de login do gerenciador
-    this.router.navigate(['/login-gerenciador']);
+    this.router.navigate(['/login_funcionario']);
   }
+  
+  
 }

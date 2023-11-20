@@ -1,0 +1,26 @@
+<p>funcionario-home works!</p>
+
+<h2>Lista de Funcionários</h2>
+
+<button (click)="adicionarFuncionario()">Adicionar Funcionário</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Cargo</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let funcionario of funcionarios">
+      <td>{{ funcionario.id }}</td>
+      <td>{{ funcionario.nome }}</td>
+      <td>
+        <!-- Botão para excluir um funcionário -->
+        <button (click)="excluir(funcionario.id)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

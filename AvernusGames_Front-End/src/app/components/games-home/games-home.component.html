@@ -1,0 +1,15 @@
+<!-- games-home.component.html -->
+
+<div>
+    <h2>Lista de Jogos</h2>
+    
+    <button (click)="adicionar()">Adicionar Jogo</button>
+  
+    <ul>
+      <li *ngFor="let game of games">
+        {{ game.nome }} - {{ game.plataforma }}
+        <button (click)="excluir(game.id)">Excluir</button>
+      </li>
+    </ul>
+  </div>
+  

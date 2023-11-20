@@ -31,6 +31,10 @@ import { FuncionariosService } from './services/funcionarios.service';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 
 import { AuthService } from './services/auth-service.service';
+import { GamesHomeComponent } from './components/games-home/games-home.component';
+import { FornecedorHomeComponent } from './components/fornecedor-home/fornecedor-home.component';
+import { FuncionarioHomeComponent } from './components/funcionario-home/funcionario-home.component';
+import { LoginFuncionarioComponent } from './components/login-funcionario/login-funcionario.component';
 
 
 
@@ -45,7 +49,11 @@ import { AuthService } from './services/auth-service.service';
     FornecedoresComponent,
     FuncionariosComponent,
     HomeComponent,
-    GamesComponent
+    GamesComponent,
+    GamesHomeComponent,
+    FornecedorHomeComponent,
+    FuncionarioHomeComponent,
+    LoginFuncionarioComponent
   ],
   imports: [
     BrowserModule,

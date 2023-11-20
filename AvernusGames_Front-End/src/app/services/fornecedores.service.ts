@@ -35,7 +35,7 @@ export class FornecedoresService {
     return this.http.put<Fornecedor>(url, fornecedor, httpOptions);
   }
 
-  excluir_(id: number): Observable<any> {
+  excluir(id: number): Observable<any> {
     const url = `${this.apiUrl}/excluir_fornecedor_por_id/${id}`;
     return this.http.delete<string>(url, httpOptions);
   }

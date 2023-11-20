@@ -3,17 +3,18 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Venda } from 'src/app/models/Venda';
 import { ItemVenda } from 'src/app/models/ItemVenda';
 import { Game } from 'src/app/models/Game';
-import { Cliente } from 'src/app/models/Cliente'; 
+import { Cliente } from 'src/app/models/Cliente'; // Importe a classe Cliente
 import { VendasService } from 'src/app/services/vendas.service';
 import { GamesService } from 'src/app/services/games.service';
-import { ClientesService } from 'src/app/services/clientes.service'; 
+import { ClientesService } from 'src/app/services/clientes.service'; // Importe o serviço de clientes
+
 @Component({
   selector: 'app-venda',
   templateUrl: './vendas.component.html',
   styleUrls: ['./vendas.component.css']
 })
 export class VendasComponent implements OnInit {
-  formulario: any;
+  formulario: FormGroup;
   tituloFormulario: string = '';
   itens: ItemVenda[] = [];
   games: Game[] = [];
@@ -33,15 +34,16 @@ export class VendasComponent implements OnInit {
       this.games = games;
     });
 
-    this.clientesService.listar().subscribe((clientes: Cliente[]) => { // Obtenha a lista de clientes
+    this.clientesService.listar().subscribe((clientes: Cliente[]) => {
       this.clientes = clientes;
     });
 
     this.formulario = new FormGroup({
-      clienteSelecionado: new FormControl(null),
+      clienteCpf: new FormControl(null),
       nf: new FormControl(null),
       produtoSelecionado: new FormControl(null),
       quantidade: new FormControl(1),
+      clienteSelecionado: new FormControl(null), // Adicione o controle para o cliente
     });
   }
 
@@ -70,7 +72,6 @@ export class VendasComponent implements OnInit {
 
   enviarFormulario(): void {
     const venda: Venda = this.formulario.value;
-    venda.cliente = this.formulario.get('clienteSelecionado').value; // Obtenha o cliente selecionado
     venda.itens = this.itens;
 
     this.vendasService.cadastrar(venda).subscribe(result => {
@@ -90,7 +91,7 @@ export class VendasComponent implements OnInit {
 
   calcValorVenda(valorCompra: number, markup: number): number {
     const valorVenda: number = valorCompra * (1 + markup);
-    const taxaImposto: number = 0.15;
+    const taxaImposto: number = 0.15; // 15% de imposto
     const valorTotal: number = valorVenda * (1 + taxaImposto);
     return valorTotal;
   }

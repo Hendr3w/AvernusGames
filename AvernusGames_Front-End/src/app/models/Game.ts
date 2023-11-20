@@ -4,17 +4,17 @@ import { Genero } from "./Genero";
 import { Plataforma } from "./Plataforma";
 export class Game {
     id: number = 0;
-    nome: string = '';
+    nome: string = 'Desconhecido';
     descricao: string = '';
     valorCompra: number = 0;
     markup: number = 0;
-    fornecedor: Fornecedor = new Fornecedor();
+    fornecedor?: Fornecedor
     fornecedorId: number = 0;
-    genero: Genero = new Genero;
+    genero?: Genero;
     generoId: number = 0;
-    desenvolvedor: Desenvolvedor = new Desenvolvedor();
+    desenvolvedor?: Desenvolvedor;
     desenvolvedorId: number = 0;
-    plataforma: Plataforma = new Plataforma();
+    plataforma?: Plataforma;
     plataformaId: number = 0;
     
   }

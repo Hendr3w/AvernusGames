@@ -111,7 +111,7 @@ public class GameController : ControllerBase
 
   // Deletar Game {id}:
   [HttpDelete]
-  [Route("deletar_game_id")]
+  [Route("deletar_game_id/{id}")]
   public async Task<ActionResult> DeletarGameId(int id)
   {
     if (_dbContext is null) return NotFound();

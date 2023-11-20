@@ -27,6 +27,11 @@ export class ClientesService {
     return this.http.get<Cliente>(url);
   }
 
+  buscarEmail(email : string): Observable<Cliente> {
+    const url = `${this.apiUrl}/buscar_email/${email}`;
+    return this.http.get<Cliente>(url);
+  }
+
   cadastrar(cliente : Cliente) : Observable<any> {
     const url = `${this.apiUrl}/cadastrar_cliente`;
     return this.http.post<Cliente>(url, cliente, httpOptions)
@@ -40,10 +45,5 @@ export class ClientesService {
   excluir(id : number) : Observable<any> {
     const url = `${this.apiUrl}/excluir_id/${id}`
     return this.http.delete<string>(url, httpOptions)
-  }
-  
-  buscarEmail(email: string): Observable<Cliente> {
-    const url = `${this.apiUrl}/buscar_email_do_cliente/${email}`;
-    return this.http.get<Cliente>(url);
   }
 }

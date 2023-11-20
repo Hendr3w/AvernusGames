@@ -25,6 +25,11 @@ export class FuncionariosService {
     return this.http.get<Funcionario>(url);
   }
 
+  buscarCpf(cpf : string): Observable<Funcionario> {
+    const url = `${this.apiUrl}/buscar_cpf/${cpf}`;
+    return this.http.get<Funcionario>(url);
+  }
+
   cadastrar(funcionario: Funcionario): Observable<any> {
       const url = `${this.apiUrl}/cadastrar_funcionario`;
       return this.http.post<Funcionario>(url, funcionario, httpOptions);
@@ -35,8 +40,8 @@ export class FuncionariosService {
     return this.http.put<Funcionario>(url, funcionario, httpOptions);
   }
 
-  excluir_(id: number): Observable<any> {
-    const url = `${this.apiUrl}/excluir_funcionario_por_id/${id}`;
+  excluir(id: number): Observable<any> {
+    const url = `${this.apiUrl}/excluir/${id}`;
     return this.http.delete<string>(url, httpOptions);
   }
 }
