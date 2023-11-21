@@ -30,18 +30,18 @@ export class VendasService {
 
   cadastrar(venda : Venda) : Observable<any> {
     const url = `${this.apiUrl}/cadastrar_venda`;
-    return this.http.post<Venda>(url, Venda, httpOptions)
+    return this.http.post<Venda>(url, venda, httpOptions)
   }
  
   //Talvez não seja usado. 
   atualizar(venda : Venda) : Observable<any> {
     const url = `${this.apiUrl}/atualizar_venda`;
-    return this.http.put<Venda>(url, Venda, httpOptions)
+    return this.http.put<Venda>(url, venda, httpOptions)
   }
 
   cadastrarItem(item : ItemVenda) : Observable<any> {
     const url = `${this.apiUrl}/cadastrar_item`;
-    return this.http.post<ItemVenda>(url, ItemVenda, httpOptions)
+    return this.http.post<ItemVenda>(url, item, httpOptions)
   }
 
   

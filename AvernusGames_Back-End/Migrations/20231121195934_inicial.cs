@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Avernus_Games_v2.Migrations
 {
     /// <inheritdoc />
-    public partial class v1 : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -251,15 +251,15 @@ namespace Avernus_Games_v2.Migrations
                 name: "ItemVenda",
                 columns: table => new
                 {
-                    VendaId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    VendaId1 = table.Column<int>(type: "int", nullable: false),
+                    VendaId = table.Column<int>(type: "int", nullable: false),
                     GameId = table.Column<int>(type: "int", nullable: false),
                     Qtd = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ItemVenda", x => x.VendaId);
+                    table.PrimaryKey("PK_ItemVenda", x => x.Id);
                     table.ForeignKey(
                         name: "FK_ItemVenda_Game_GameId",
                         column: x => x.GameId,
@@ -267,8 +267,8 @@ namespace Avernus_Games_v2.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ItemVenda_Venda_VendaId1",
-                        column: x => x.VendaId1,
+                        name: "FK_ItemVenda_Venda_VendaId",
+                        column: x => x.VendaId,
                         principalTable: "Venda",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -316,9 +316,9 @@ namespace Avernus_Games_v2.Migrations
                 column: "GameId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ItemVenda_VendaId1",
+                name: "IX_ItemVenda_VendaId",
                 table: "ItemVenda",
-                column: "VendaId1");
+                column: "VendaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Venda_ClienteId",

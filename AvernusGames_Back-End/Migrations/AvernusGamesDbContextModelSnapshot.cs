@@ -219,7 +219,7 @@ namespace Avernus_Games_v2.Migrations
 
             modelBuilder.Entity("Avernus_Games_Store.src.Models.ItemVenda", b =>
                 {
-                    b.Property<int>("VendaId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -229,14 +229,14 @@ namespace Avernus_Games_v2.Migrations
                     b.Property<int>("Qtd")
                         .HasColumnType("int");
 
-                    b.Property<int>("VendaId1")
+                    b.Property<int>("VendaId")
                         .HasColumnType("int");
 
-                    b.HasKey("VendaId");
+                    b.HasKey("Id");
 
                     b.HasIndex("GameId");
 
-                    b.HasIndex("VendaId1");
+                    b.HasIndex("VendaId");
 
                     b.ToTable("ItemVenda");
                 });
@@ -355,7 +355,7 @@ namespace Avernus_Games_v2.Migrations
 
                     b.HasOne("Avernus_Games_Store.src.Models.Venda", "Venda")
                         .WithMany()
-                        .HasForeignKey("VendaId1")
+                        .HasForeignKey("VendaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

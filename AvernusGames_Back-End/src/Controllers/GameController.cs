@@ -14,19 +14,7 @@ public class GameController : ControllerBase
   {
     _dbContext = dbContext;
   }
-
-  // --------------------------   GameS --------------------------------------------------
-  // Listar todos os Games(Games, RPGs e Vestimentas)
-  [HttpGet]
-  [Route("listar_Games")]
-  public async Task<ActionResult<IEnumerable<Game>>> ListarGames()
-  {
-    if(_dbContext is null) return NotFound();
-    if(_dbContext.Game is null) return NotFound();
-    return await _dbContext.Game.ToListAsync();
-  }
-
-
+  
   // --------------------------   CRUD GAME --------------------------------------------------
   // Cadastrar Games:
   [HttpPost]
@@ -42,7 +30,7 @@ public class GameController : ControllerBase
   }
 
 
-  // Listar somente os Games:
+  // Listar Games:
   [HttpGet]
   [Route("listar_game")]
   public async Task<ActionResult<IEnumerable<Game>>> ListarGame()
