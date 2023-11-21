@@ -7,11 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  constructor(private router: Router) {}
 
-    constructor(private router: Router) {}
-
-    irParaTelaFornecedor(): void {
-      this.router.navigate(['fornecedor']);
-    }
-
+  irParaFuncionarioHome(): void {
+    // Navegar para a tela de login de funcionários
+    this.router.navigate(['/funcionario_home']);
+  }
+  irParaFornecedorHome(): void {
+    // Navegar para a tela de pré-login
+    this.router.navigate(['/fornecedor_home']);
+  }
+  irParaGameHome(): void {
+    // Navegar para a tela de login de cliente
+    this.router.navigate(['/game_home']);
+  }
 }

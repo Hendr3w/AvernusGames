@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Venda } from '../models/Venda';
+import { ItemVenda } from '../models/ItemVenda';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -36,6 +37,11 @@ export class VendasService {
   atualizar(venda : Venda) : Observable<any> {
     const url = `${this.apiUrl}/atualizar_venda`;
     return this.http.put<Venda>(url, Venda, httpOptions)
+  }
+
+  cadastrarItem(item : ItemVenda) : Observable<any> {
+    const url = `${this.apiUrl}/cadastrar_item`;
+    return this.http.post<ItemVenda>(url, ItemVenda, httpOptions)
   }
 
   

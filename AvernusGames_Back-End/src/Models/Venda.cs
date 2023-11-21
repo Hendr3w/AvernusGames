@@ -12,7 +12,6 @@ namespace Avernus_Games_Store.src.Models
         public Cliente? Cliente { get; set; }
         public int ClienteId { get; set; }
         public string? Nf { get; set; }
-        public ICollection<ItemVenda> Itens { get; set; }
         public Venda(){}
     }
 }

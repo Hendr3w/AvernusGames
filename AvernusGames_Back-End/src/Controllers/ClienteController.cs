@@ -23,6 +23,8 @@ public class ClienteController : ControllerBase
     {
         if(_context.Cliente is null)
             return NotFound();
+
+            
         return await _context.Cliente.ToListAsync();
     } 
 
@@ -48,6 +50,13 @@ public class ClienteController : ControllerBase
         if(_context.Cliente is null)
             return  NotFound();
         var cliente = await _context.Cliente.FirstOrDefaultAsync(c => c.CPF == cpf);
+
+
+
+
+
+        
+
         if (cliente is null)
             return NotFound();
         return cliente;

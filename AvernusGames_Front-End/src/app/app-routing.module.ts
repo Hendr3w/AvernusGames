@@ -28,7 +28,8 @@ const routes: Routes = [
   {path: 'fornecedor_home', component:FornecedorHomeComponent},
   {path: 'funcionario_home', component:FuncionarioHomeComponent},
   {path: 'game_home', component:GamesHomeComponent},
-  {path: 'login_funcionario', component:LoginFuncionarioComponent}
+  {path: 'login_funcionario', component:LoginFuncionarioComponent},
+  {path: 'pre_login', component:HomeComponent}
 ];
 
 @NgModule({

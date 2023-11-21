@@ -32,6 +32,15 @@ public class VendaController : ControllerBase
         return await _context.Venda.ToListAsync();
     }
 
+    [HttpPost]
+    [Route("cadastrar_item")]
+    public ActionResult CadastrarItem(ItemVenda item)
+    {
+        _context.Add(item);
+        _context.SaveChanges();
+        return Created("", item);
+    }
+
     /*[HttpDelete]
     [Route("ExcluirVenda")]
     public async Task<ActionResult> ExcluirVenda(int id)

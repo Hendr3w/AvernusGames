@@ -6,7 +6,6 @@ export class Venda {
     cliente: Cliente = new Cliente();
     clienteId: number = 0;
     nf: string = '';
-    itens: ItemVenda[] = [];
 
   }
   

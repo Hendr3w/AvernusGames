@@ -1,7 +1,8 @@
 <div style="text-align: center; color: white">
   <h2>{{ tituloFormulario }}</h2>
 
-  <form [formGroup]="formulario">
+  <!-- Formulário de Venda -->
+  <form [formGroup]="formularioVenda">
     <div>
       <label for="clienteSelecionado">Cliente:</label>
       <select id="clienteSelecionado" formControlName="clienteSelecionado">
@@ -14,7 +15,10 @@
       <label for="nf">Número da NF:</label>
       <input type="text" id="nf" formControlName="nf">
     </div>
+  </form>
 
+  <!-- Formulário de Item -->
+  <form [formGroup]="formularioItem">
     <div>
       <label for="produtoSelecionado">Produto:</label>
       <select id="produtoSelecionado" formControlName="produtoSelecionado">
@@ -29,18 +33,20 @@
     </div>
 
     <button type="button" (click)="adicionarItem()">Adicionar Item</button>
-
-    <div *ngIf="itens.length > 0">
-      <h3>Itens da Venda</h3>
-      <ul>
-        <li *ngFor="let item of itens">
-          {{ item.game?.nome }} - Quantidade: {{ item.qtd }} - Valor Unitário: {{ item.game?.valorCompra | currency:'BRL':'symbol':'1.2-2' }} - Valor Total: {{ (item.game?.valorCompra || 0) * item.qtd | currency:'BRL':'symbol':'1.2-2' }}
-        </li>
-      </ul>
-
-      <p>Valor Total da Venda: {{ valorTotal | currency:'BRL':'symbol':'1.2-2' }}</p>
-    </div>
-
-    <button type="button" (click)="enviarFormulario()">Confirmar Venda</button>
   </form>
+
+  <!-- Lista de Itens da Venda -->
+  <div *ngIf="itens.length > 0">
+    <h3>Itens da Venda</h3>
+    <ul>
+      <li *ngFor="let item of itens">
+        {{ item.game?.nome }} - Quantidade: {{ item.qtd }} - Valor Unitário: {{ item.game?.valorCompra | currency:'BRL':'symbol':'1.2-2' }} - Valor Total: {{ (item.game?.valorCompra || 0) * item.qtd | currency:'BRL':'symbol':'1.2-2' }}
+      </li>
+    </ul>
+
+    <p>Valor Total da Venda: {{ valorTotal | currency:'BRL':'symbol':'1.2-2' }}</p>
+  </div>
+
+  <!-- Botão de Confirmar Venda -->
+  <button type="button" (click)="enviarFormulario()">Confirmar Venda</button>
 </div>
